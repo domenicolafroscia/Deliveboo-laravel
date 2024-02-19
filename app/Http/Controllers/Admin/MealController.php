@@ -20,7 +20,7 @@ class MealController extends Controller
      */
     public function index()
     {
-        $restaurant = Restaurant::where('user_id', Auth::user()->id);
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         $meals = Meal::where('restaurant_id', $restaurant->id);
         return view('admin.meals.index', compact('meals', 'restaurant'));
     }
