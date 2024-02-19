@@ -18,7 +18,7 @@
                 @foreach ($meals as $meal)
                     <tr>
                         <th scope="row">{{ $meal->name }}</th>
-                        <td>{{ $project->price }} $</td>
+                        <td>{{ $project->price }}</td>
                         <td>{{ $project->is_active }}</td>
                         <td>
                             
