@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <h2 class="text-center py-3">Your Meals {{$restaurant->name}}</h2>
+        <div class="text-end">
+            <a class="btn btn-success" href="{{ route('admin.meals.create')}}">Create new meal</a>
+        </div>
 
         <table class="table table-striped my-5">
             <thead>
