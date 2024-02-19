@@ -23,7 +23,8 @@ class RestaurantController extends Controller
         $user = Auth::user();
         $restaurant = $user->restaurant;
         if($restaurant) {
-            return view('admin.restaurants.index', compact('restaurant'));
+            $meals = Meal::where('restaurant_id', $restaurant->id)->get();
+            return view('admin.restaurants.index', compact('restaurant','meals'));
         } else {
            return redirect()->route('admin.restaurants.create');
         }
@@ -37,8 +38,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        // $categories = Category::all();
-        return view('admin.restaurants.create');
+        $categories = Category::all();
+        return view('admin.restaurants.create', compact('categories'));
     }
 
     /**
@@ -60,6 +61,10 @@ class RestaurantController extends Controller
         }
 
         $new_restaurant->save();
+
+        if($request->has('categories')) {
+            $new_restaurant->categories()->attach($request->categories);
+        }
         
         return redirect()->route('admin.restaurants.index');
     }
