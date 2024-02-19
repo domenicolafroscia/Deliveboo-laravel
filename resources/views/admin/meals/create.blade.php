@@ -38,6 +38,10 @@
                 @enderror
             </div>
 
+            <div class="mb-3">
+                <img id="preview-img" src="" alt="" style="max-height: 250px">
+            </div>
+
             <button class="btn btn-success mt-4" type="submit" >Save</button>
 
         </form>

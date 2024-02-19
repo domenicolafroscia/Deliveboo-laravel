@@ -41,6 +41,15 @@
                 @enderror
             </div>
 
+            <div class="image-preview mb-3">
+                @if ($meal->image)
+                    <img src="{{ asset('Storage/' . $meal->image) }}" alt="">
+                @endif
+            </div>
+
+            <div class="mb-3">
+                <img id="preview-img" src="" alt="" style="max-height: 250px">
+            </div>
 
             <div class="mb-3">
                 <label for="is_active">Available</label>
