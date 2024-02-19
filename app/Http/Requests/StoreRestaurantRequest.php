@@ -29,7 +29,7 @@ class StoreRestaurantRequest extends FormRequest
             'phone' => 'required|max:15',
             'address' => 'required',
             'p_iva' => 'required|min:11|max:11',
-            'categories' => ['exists:categories,id']
+            'categories' => ['exists:categories,id', 'required']
         ];
     }
 }
