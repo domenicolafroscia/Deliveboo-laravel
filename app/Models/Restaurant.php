@@ -8,6 +8,10 @@ use Illuminate\Support\Str;
 
 class Restaurant extends Model
 {
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    
     use HasFactory;
 
     public function setNameattribute($value){
