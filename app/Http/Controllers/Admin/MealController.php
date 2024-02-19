@@ -26,7 +26,7 @@ class MealController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.meals.create');
     }
 
     /**
