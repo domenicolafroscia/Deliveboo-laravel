@@ -21,7 +21,7 @@
 
             <div class="mb-3 has-validation">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
                     name="price" value="{{ old('price', $meal->price) }}">
                 @error('price')
                     <div class="invalid-feedback">{{ $message }}</div>
