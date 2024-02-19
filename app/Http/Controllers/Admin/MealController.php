@@ -21,7 +21,7 @@ class MealController extends Controller
     public function index()
     {
         $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-        $meals = Meal::where('restaurant_id', $restaurant->id);
+        $meals = Meal::where('restaurant_id', $restaurant->id)->get();
         return view('admin.meals.index', compact('meals', 'restaurant'));
     }
 
@@ -52,7 +52,8 @@ class MealController extends Controller
             $meal->image = $path;
         }
 
-        $meal->restaurant_id = Auth::id();
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        $meal->restaurant_id = $restaurant->id;
 
         $meal->save();
 
@@ -123,7 +124,8 @@ class MealController extends Controller
     }
 
     private function checkUser(Meal $meal) {
-        if($meal->restaurant_id !== Auth::user()->id) {
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        if($meal->restaurant_id !== $restaurant->id) {
             abort(404);
         } 
     }
