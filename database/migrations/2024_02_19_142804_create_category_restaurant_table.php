@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('category_restaurant', function (Blueprint $table) {
             $table->unsignedBigInteger('restaurant_id');
-            $table->foreign('restaurant_id')->references('id')->on('restaurants')->nullOnDelete();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->cascadeOnDelete();
 
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->nullOnDelete();
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
 
-            $table->primary(['restaurant_id', 'category_id']);
+            $table->primary(['category_id', 'restaurant_id']);
         });
     }
 
