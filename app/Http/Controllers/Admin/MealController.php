@@ -18,7 +18,7 @@ class MealController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
+        $meals = Meal::where('restaurant_id', '=', Auth::user()->id);
         return view('admin.meals.index', compact('meals'));
     }
 
@@ -73,9 +73,10 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Meal $meal)
     {
-        //
+        $this->checkUser($meal);
+        return view('admin.meals.edit', compact('meal'));
     }
 
     /**
@@ -99,5 +100,11 @@ class MealController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function checkUser(Meal $meal) {
+        if($meal->restaurant_id !== Auth::user()->id) {
+            abort(404);
+        } 
     }
 }
