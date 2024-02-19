@@ -36,7 +36,7 @@
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
-                    name="image">
+                    name="image" value="{{ old('image', $meal->image) }}">
                 @error('image')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -44,7 +44,7 @@
 
             <div class="image-preview mb-3">
                 @if ($meal->image)
-                    <img src="{{ asset('Storage/' . $meal->image) }}" alt="">
+                    <img src="{{ asset('storage/' . $meal->image) }}" alt="">
                 @endif
             </div>
 
