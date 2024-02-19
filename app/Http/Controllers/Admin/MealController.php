@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMealRequest;
+use App\Http\Requests\UpdateMealRequest;
 use App\Models\Meal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -86,9 +87,24 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateMealRequest $request, Meal $meal)
     {
-        //
+        $this->checkUser($meal);
+
+        $form_data = $request->validated(); 
+
+        if($request->hasFile('image')) {
+            if($meal->image) {
+                Storage::delete($meal->image);
+            }
+
+            $path = Storage::put('meal_images', $request->image);
+            $form_data['image'] = $path;
+        }
+
+        $meal->update($form_data);
+
+        return redirect()->route('admin.meals.show', ['meal' => $meal->slug]);
     }
 
     /**
