@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMealRequest;
 use App\Http\Requests\UpdateMealRequest;
 use App\Models\Meal;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -19,8 +20,9 @@ class MealController extends Controller
      */
     public function index()
     {
-        $meals = Meal::where('restaurant_id', '=', Auth::user()->id);
-        return view('admin.meals.index', compact('meals'));
+        $restaurant = Restaurant::where('user_id', Auth::user()->id);
+        $meals = Meal::where('restaurant_id', $restaurant->id);
+        return view('admin.meals.index', compact('meals', 'restaurant'));
     }
 
     /**

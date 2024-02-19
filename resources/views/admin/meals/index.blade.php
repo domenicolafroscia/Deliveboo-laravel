@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="text-center py-3">Your Meals</h2>
+        <h2 class="text-center py-3">Your Meals {{$restaurant->name}}</h2>
 
         <table class="table table-striped my-5">
             <thead>
@@ -18,8 +18,8 @@
                 @foreach ($meals as $meal)
                     <tr>
                         <th scope="row">{{ $meal->name }}</th>
-                        <td>{{ $project->price }}</td>
-                        <td>{{ $project->is_active }}</td>
+                        <td>{{ $meal->price }}</td>
+                        <td>{{ $meal->is_active }}</td>
                         <td>
                             
                         </td>

@@ -1,9 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admim;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRestaurantRequest;
+use App\Models\Category;
+use App\Models\Meal;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -14,7 +19,14 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $restaurant = $user->restaurant;
+        if($restaurant) {
+            return view('admin.restaurants.index', compact('restaurant'));
+        } else {
+           return redirect()->route('admin.restaurants.create');
+        }
+        
     }
 
     /**
@@ -24,7 +36,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        // $categories = Category::all();
+        return view('admin.restaurants.create');
     }
 
     /**
@@ -33,9 +46,15 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRestaurantRequest $request)
     {
-        //
+        $form_data = $request->validated();
+        $new_restaurant = new Restaurant();
+        $new_restaurant->fill($form_data);
+        $new_restaurant->user_id = Auth::user()->id;
+        $new_restaurant->save();
+        
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
