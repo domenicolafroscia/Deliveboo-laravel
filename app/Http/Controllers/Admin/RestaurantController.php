@@ -9,6 +9,7 @@ use App\Models\Meal;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -52,6 +53,12 @@ class RestaurantController extends Controller
         $new_restaurant = new Restaurant();
         $new_restaurant->fill($form_data);
         $new_restaurant->user_id = Auth::user()->id;
+
+        if ($request->hasFile('image')) {
+            $path = Storage::put('restaurant_images', $request->image);
+            $new_restaurant->image = $path;
+        }
+
         $new_restaurant->save();
         
         return redirect()->route('admin.restaurants.index');

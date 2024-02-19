@@ -54,6 +54,10 @@
             @enderror
         </div>
 
+        <div class="mb-3">
+            <img id="preview-img" src="" alt="" style="max-height: 250px">
+        </div>
+
         {{-- <p>Choose your Category:</p>
         @foreach ($categories as $category)
         <div class="form-check">
