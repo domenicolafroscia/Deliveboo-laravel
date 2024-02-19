@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        <h2>Hello {{ Auth::user()->name }} {{ Auth::user()->surname }}! Welcome to your restaurant.</h2>
+                        <h2>Hello {{ Auth::user()->name }} {{ Auth::user()->surname }}! Welcome to Deliveboo.</h2>
                     </div>
                 </div>
             </div>
