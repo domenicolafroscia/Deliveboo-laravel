@@ -25,7 +25,12 @@
                         <td>{{ $meal->price }}</td>
                         <td>{{ $meal->is_active }}</td>
                         <td>
-                            
+                            <a class="btn btn-success" href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">
+                                <i class="fa-solid fa-info"></i>
+                            </a>
+                            <a class="btn btn-warning" href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
