@@ -5,7 +5,6 @@
         @include('partials.go_back')
         <div class="row row-cols-2 justify-content-center">
             <div class="col">
-               
                 <h2 class="text-center py-3">New Meal</h2>
 
                 <form class="mt-5" action="{{ route('admin.meals.store') }}" method="POST" enctype="multipart/form-data">
@@ -22,7 +21,7 @@
 
                     <div class="mb-3 has-validation">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
+                        <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
                             name="price" value="{{ old('price') }}">
                         @error('price')
                             <div class="invalid-feedback">{{ $message }}</div>
