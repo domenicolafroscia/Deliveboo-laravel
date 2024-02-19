@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreMealRequest;
 use App\Models\Meal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class MealController extends Controller
 {
@@ -35,9 +38,22 @@ class MealController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMealRequest $request)
     {
-        //
+        $form_data = $request->validated();
+        $meal = new Meal();
+        $meal->fill($form_data);
+
+        if($request->hasFile('image')) {
+            $path = Storage::put('meal_images', $request->image);
+            $meal->image = $path;
+        }
+
+        $meal->restaurant_id = Auth::id();
+
+        $meal->save();
+
+        return redirect()->route('admin.meals.index');
     }
 
     /**
