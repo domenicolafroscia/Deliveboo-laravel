@@ -69,12 +69,12 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> My Restaurant
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.meals.index') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> My Meals
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
 
 
