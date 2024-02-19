@@ -23,7 +23,8 @@ class RestaurantController extends Controller
         $user = Auth::user();
         $restaurant = $user->restaurant;
         if($restaurant) {
-            return view('admin.restaurants.index', compact('restaurant'));
+            $meals = Meal::where('restaurant_id', $restaurant->id)->get();
+            return view('admin.restaurants.index', compact('restaurant','meals'));
         } else {
            return redirect()->route('admin.restaurants.create');
         }
