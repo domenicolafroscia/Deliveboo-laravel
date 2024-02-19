@@ -54,8 +54,7 @@
                 @enderror
             </div>
 
-
-
+            <button class="btn btn-success mt-4" type="submit" >Save</button>
 
         </form>
     </div>
