@@ -63,9 +63,11 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Meal $meal)
     {
-        //
+        $this->checkUser($meal);
+
+        return view('admin.meals.show', compact('meal'));
     }
 
     /**
