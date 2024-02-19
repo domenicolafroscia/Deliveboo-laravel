@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MealController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,11 +34,8 @@ Route::middleware(['auth','verified'])
     Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class);
     Route::get('categories', [CategoryController::class, 'index'])->name('category');
-
-})
-
-    
-;
+    Route::resource('meals', MealController::class)->parameters(['meals' => 'meal:slug']);
+});
 
 require __DIR__.'/auth.php';
 
