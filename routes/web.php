@@ -33,7 +33,6 @@ Route::middleware(['auth','verified'])
     //PUT HERE ALL THE ROUTE FOR THE CRUD
     Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class);
-    Route::get('categories', [CategoryController::class, 'index'])->name('category');
     Route::resource('meals', MealController::class)->parameters(['meals' => 'meal:slug']);
 });
 
