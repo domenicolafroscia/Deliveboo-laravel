@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('partials.go_back')
         <h2 class="py-3 text-center">{{ $meal->name }}</h2>
     </div>
 

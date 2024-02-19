@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+@include('partials.go_back')
     <h2 class="text-center py-3">Insert your Restautant details</h2>
 
     <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">

@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('partials.go_back')
         <h2 class="text-center py-3">New Meal</h2>
 
         <form class="mt-5" action="{{ route('admin.meals.update', ['meal' => $meal->slug]) }}" method="POST"
