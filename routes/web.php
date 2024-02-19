@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admim\RestaurantController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware(['auth','verified'])
 ->group(function(){
     //PUT HERE ALL THE ROUTE FOR THE CRUD
     Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('restaurants', RestaurantController::class);
 })
 
     
