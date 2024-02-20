@@ -118,9 +118,9 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Meal $meal)
     {
-        //
+        dd($meal);
     }
 
     private function checkUser(Meal $meal) {
