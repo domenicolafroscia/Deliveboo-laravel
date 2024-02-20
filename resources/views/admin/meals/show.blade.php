@@ -12,7 +12,7 @@
         <h5 class="text-center">Image not found</h5>
     @endif
 
-    <h5>Price: {{$meal->price}}</h5>
+    <h5>Price: {{$meal->price . " €"}}</h5>
 
     @if ($meal->is_active)
         <h5 class="text-success">Meal available</h5>

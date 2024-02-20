@@ -26,7 +26,7 @@
                 @foreach ($meals as $meal)
                     <tr>
                         <th scope="row">{{ $meal->name }}</th>
-                        <td>{{ $meal->price }}</td>
+                        <td>{{ $meal->price . " €" }}</td>
                         <td>{{ $meal->is_active ? "Available" : "Not available" }}</td>
                         <td>
                             <a class="btn btn-success" href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">
