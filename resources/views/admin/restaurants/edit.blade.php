@@ -70,17 +70,17 @@
     <div class="mb-3">
         <p>Choose your Category:</p>
         @foreach ($categories as $category)
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{ $category->id }}" id="{{ $category->name }}"
-                    name="categories[]" @checked(in_array($category->id, old('categories', $restaurant->categories->contains($category))))>
-                <label class="form-check-label" for="{{ $category->name }}">
-                    {{ $category->name }}
-                </label>
-            </div>
-        @endforeach
-        @error('categories')
-            <div class="text-danger">{{ $message }}</div>
-        @enderror
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="{{ $category->id }}" id="{{ $category->name }}"
+                        name="categories[]" @checked(in_array($category->id, old('categories', [])))>
+                    <label class="form-check-label" for="{{ $category->name }}">
+                        {{ $category->name }}
+                    </label>
+                </div>
+            @endforeach
+            @error('categories')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
     </div>
     <button class="btn btn-success" type="submit">Edit</button>
 </form>

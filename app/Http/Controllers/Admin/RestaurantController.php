@@ -22,13 +22,12 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $restaurant = $user->restaurant;
-        if($restaurant) {
+        if ($restaurant) {
             $meals = Meal::where('restaurant_id', $restaurant->id)->get();
-            return view('admin.restaurants.index', compact('restaurant','meals'));
+            return view('admin.restaurants.index', compact('restaurant', 'meals'));
         } else {
-           return redirect()->route('admin.restaurants.create');
+            return redirect()->route('admin.restaurants.create');
         }
-        
     }
 
     /**
@@ -52,7 +51,7 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $restaurant = $user->restaurant;
-        if($restaurant) {
+        if ($restaurant) {
             return redirect()->route('admin.restaurants.index');
         }
 
@@ -68,10 +67,10 @@ class RestaurantController extends Controller
 
         $new_restaurant->save();
 
-        if($request->has('categories')) {
+        if ($request->has('categories')) {
             $new_restaurant->categories()->attach($request->categories);
         }
-        
+
         return redirect()->route('admin.restaurants.index');
     }
 
@@ -92,14 +91,12 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Restaurant $restaurant)
+    public function edit()
     {
+        $categories = Category::all();
         $user = Auth::user();
-        if($user->id === $restaurant->user_id) {
-            return view('admin.restaurants.edit', compact('restaurant'));
-        } else {
-            abort(404);
-        }
+        $restaurant = $user->restaurant;
+        return view('admin.restaurants.edit', compact('restaurant', 'categories'));
     }
 
     /**
