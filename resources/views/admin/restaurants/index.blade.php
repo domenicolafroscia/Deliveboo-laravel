@@ -10,7 +10,8 @@
         <div class="text-end">
             <a class="btn btn-success" href="{{ route('admin.meals.create')}}">Create new meal</a>
         </div>
-
+        @if (count($meals) > 0)
+            
         <table class="table table-striped my-5">
             <thead>
                 <tr>
@@ -39,5 +40,10 @@
                 @endforeach
             </tbody>
         </table>
+
+        @else
+            <h2 class="alert alert-warning mt-3 text-center">Click the button to start the creation of your personal meals!</h2>
+        @endif
+       
 </div>
 @endsection
