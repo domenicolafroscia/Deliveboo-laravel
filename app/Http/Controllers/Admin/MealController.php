@@ -57,7 +57,7 @@ class MealController extends Controller
 
         $meal->save();
 
-        return redirect()->route('admin.meals.index');
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
