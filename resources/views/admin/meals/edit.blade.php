@@ -56,8 +56,8 @@
                 <label for="is_active">Available</label>
                 <select class="form-select" name="is_active" class="@error('is_active') is-invalid @enderror"
                     id="is_active">
-                    <option value="1" @selected(old('is_active', $meal->is_active) == $meal->is_active)>Meal is Available</option>
-                    <option value="0" @selected(old('is_active', $meal->is_active) == $meal->is_active)>Meal is not Available</option>
+                    <option value="1" @selected(!old('is_active', $meal->is_active))>Meal is Available</option>
+                    <option value="0" @selected(!old('is_active', $meal->is_active))>Meal is not Available</option>
                 </select>
                 @error('is_visible')
                     <div class="alert alert-danger">{{ $message }}</div>
