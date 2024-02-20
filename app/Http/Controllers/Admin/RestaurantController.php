@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
+use App\Http\Requests\UpdateRestaurantRequest;
 use App\Models\Category;
 use App\Models\Meal;
 use App\Models\Restaurant;
@@ -22,13 +23,12 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $restaurant = $user->restaurant;
-        if($restaurant) {
+        if ($restaurant) {
             $meals = Meal::where('restaurant_id', $restaurant->id)->get();
-            return view('admin.restaurants.index', compact('restaurant','meals'));
+            return view('admin.restaurants.index', compact('restaurant', 'meals'));
         } else {
-           return redirect()->route('admin.restaurants.create');
+            return redirect()->route('admin.restaurants.create');
         }
-        
     }
 
     /**
@@ -52,7 +52,7 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $restaurant = $user->restaurant;
-        if($restaurant) {
+        if ($restaurant) {
             return redirect()->route('admin.restaurants.index');
         }
 
@@ -68,10 +68,10 @@ class RestaurantController extends Controller
 
         $new_restaurant->save();
 
-        if($request->has('categories')) {
+        if ($request->has('categories')) {
             $new_restaurant->categories()->attach($request->categories);
         }
-        
+
         return redirect()->route('admin.restaurants.index');
     }
 
@@ -92,9 +92,12 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $categories = Category::all();
+        $user = Auth::user();
+        $restaurant = $user->restaurant;
+        return view('admin.restaurants.edit', compact('restaurant', 'categories'));
     }
 
     /**
@@ -104,9 +107,31 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRestaurantRequest $request)
     {
-        //
+        $user = Auth::user();
+        $restaurant = $user->restaurant;
+
+        $form_data = $request->validated(); 
+
+        if($request->hasFile('image')) {
+            if($restaurant->image) {
+                Storage::delete($restaurant->image);
+            }
+
+            $path = Storage::put('restaurant_images', $request->image);
+            $form_data['image'] = $path;
+        }
+
+        $restaurant->update($form_data);
+
+        if ($request->has('categories')) {
+            $restaurant->categories()->sync($form_data['categories']);
+        } else {
+            $restaurant->categories()->sync([]);
+        }
+
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**

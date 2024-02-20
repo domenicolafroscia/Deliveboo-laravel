@@ -5,8 +5,11 @@
     <div class="container">
 
         <h2 class="text-center py-3">{{ $restaurant->name }}</h2>
-
+ <div class="text-end mb-2">
+            <a class="btn btn-warning" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Modify Restaurant</a>
+        </div>
         <h2 class="text-center py-3">Your Meals {{ $restaurant->name }}</h2>
+
         <div class="text-end">
             <a class="btn btn-success" href="{{ route('admin.meals.create') }}">Create new meal</a>
         </div>
@@ -27,7 +30,10 @@
                     @foreach ($meals as $meal)
                         <tr>
                             <th scope="row">{{ $meal->name }}</th>
+
+
                             <td>{{ $meal->price . "€" }}</td>
+
                             <td>{{ $meal->is_active ? 'Available' : 'Not available' }}</td>
                             <td>
                                 <a class="btn btn-success" href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">
@@ -36,11 +42,14 @@
                                 <a class="btn btn-warning" href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">
                                     <i class="fa-solid fa-pencil"></i>
                                 </a>
+
+
                                 <form class="d-inline-block" action="{{ route('admin.meals.destroy',['meal' => $meal->slug])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit">Delete</button>
                                 </form>
+
                             </td>
                         </tr>
                     @endforeach
