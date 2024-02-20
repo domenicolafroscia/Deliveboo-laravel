@@ -109,7 +109,7 @@ class MealController extends Controller
 
         $meal->update($form_data);
 
-        return redirect()->route('admin.meals.show', ['meal' => $meal->slug]);
+        return redirect()->route('admin.meals.show', compact('meal'));
     }
 
     /**
@@ -118,9 +118,11 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Meal $meal)
     {
-        //
+        $meal->delete();
+
+        return redirect()->route('admin.restaurants.index');
     }
 
     private function checkUser(Meal $meal) {

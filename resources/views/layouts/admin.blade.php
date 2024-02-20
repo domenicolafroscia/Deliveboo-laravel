@@ -69,6 +69,12 @@
                                     <i class="fa-solid fa-utensils fa-lg fa-fw"></i> My Restaurant
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.trash.index') }}">
+                                    <i class="fa-solid fa-trash"></i> Trash
+                                </a>
+                            </li>
                             {{-- <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.meals.index') }}">
