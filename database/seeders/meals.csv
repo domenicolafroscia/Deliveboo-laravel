@@ -1,0 +1,41 @@
+name,price,description,restaurant_id
+Margherita,7.50,"Tomato, mozzarella, basil",1
+Four Seasons,9.00,"Tomato, mozzarella, mushrooms, ham, artichokes",1
+Diavola,8.50,"Tomato, mozzarella, spicy salami, chili peppers",1
+Capricciosa,9.50,"Tomato, mozzarella, mushrooms, ham, olives, artichokes",1
+Calzone,8.00,"Tomato, mozzarella, ham, mushrooms",1
+Sushi Maki,12.00,"Rice, raw fish, nori seaweed, cucumber, avocado",2
+Sashimi,15.00,"Raw fish",2
+Tonkotsu Ramen,10.50,"Noodles, pork broth, cooked pork, boiled egg, green onion, mushrooms",2 
+Teriyaki Chicken,11.00,"Chicken, teriyaki sauce, rice",2
+Gyoza,8.50,"Minced meat, vegetables, soy sauce",2
+Moussaka,10.50,"Eggplant, minced meat, potatoes, cheese, béchamel sauce",3
+Gyros,9.00,"Pork meat, pita bread, tzatziki sauce, lettuce, tomato, onion",3
+Souvlaki,8.50,"Pork meat skewers, tzatziki sauce, fries",3
+Greek Salad,7.00,"Tomato, cucumber, olives, red onion, feta cheese, oregano, olive oil",3 
+Tzatziki,4.00,"Greek yogurt, cucumber, garlic, olive oil, parsley",3
+Vegan Burger,9.00,"Chickpea burger, wholemeal bun, lettuce, tomato, cucumber, red onion, avocado",4
+Vegan Pad Thai,11.50,"Rice noodles, tofu, vegetables, soy sauce, lime",4
+Falafel Wrap,8.00,"Falafel, wholemeal pita bread, hummus, lettuce, tomato, onion",4
+Quinoa Bowl,10.00,"Quinoa, avocado, chickpeas, grilled vegetables, tahini sauce",4
+Vegan Pizza,10.50,"Tomato, vegan mozzarella, mixed vegetables, black olives, mushrooms",4 
+Lasagna,12.00,"Egg pasta, minced meat, sauce, mozzarella, parmesan cheese",5
+Spaghetti Carbonara,11.50,"Spaghetti, pancetta, eggs, parmesan cheese, black pepper",5
+Mushroom Risotto,13.00,"Rice, porcini mushrooms, vegetable broth, onion, white wine, parmesan cheese, parsley",5
+Penne all'Arrabbiata,9.00,"Penne, tomato, chili, garlic, olive oil, parsley",5
+Caprese Salad,8.50,"Tomato, buffalo mozzarella, basil, olive oil, salt",5
+Kung Pao Chicken,10.50,"Chicken, peanuts, chili, onion, soy sauce, ginger, garlic",6 
+Mapo Tofu,9.00,"Tofu, minced pork, fermented beans, chili, onion, garlic, ginger",6
+Sweet and Sour Pork,11.00,"Pork meat, pineapple, bell peppers, onion, sweet and sour sauce",6 
+Chow Mein,8.50,"Noodles, pork meat, vegetables, soy sauce, garlic, ginger",6
+Dim Sum,9.50,"Various dumplings",6
+Cheeseburger,7.50,"Bun, beef patty, cheese, lettuce, tomato, ketchup, mayonnaise",7
+Chicken Nuggets,6.00,"Chicken, breading, ketchup",7
+Hot Dog,5.50,"Sausage, bun, ketchup, mustard, onion",7
+French Fries,4.00,"Potatoes",7
+Milkshake,5.00,"Ice cream, milk, chocolate or strawberry syrup",7
+Doner Kebab,8.00,"Pork meat, pita bread, lettuce, tomato, onion, tzatziki sauce",8
+Shawarma,9.00,"Chicken meat, pita bread, lettuce, tomato, onion, tahini sauce",8
+Falafel Plate,10.50,"Falafel, lettuce, tomato, onion, hummus, pita bread",8 
+Chicken Kebab,9.50,"Chicken skewers, pita bread, lettuce, tomato, onion, yogurt sauce",8
+Kofta Kebab,9.00,"Meatballs, pita bread, lettuce, tomato, onion, tahini sauce",8
