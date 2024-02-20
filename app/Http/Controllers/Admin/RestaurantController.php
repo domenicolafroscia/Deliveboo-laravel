@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
+use App\Http\Requests\UpdateRestaurantRequest;
 use App\Models\Category;
 use App\Models\Meal;
 use App\Models\Restaurant;
@@ -106,9 +107,31 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRestaurantRequest $request)
     {
-        //
+        $user = Auth::user();
+        $restaurant = $user->restaurant;
+
+        $form_data = $request->validated(); 
+
+        if($request->hasFile('image')) {
+            if($restaurant->image) {
+                Storage::delete($restaurant->image);
+            }
+
+            $path = Storage::put('restaurant_images', $request->image);
+            $form_data['image'] = $path;
+        }
+
+        $restaurant->update($form_data);
+
+        if ($request->has('categories')) {
+            $restaurant->categories()->sync($form_data['categories']);
+        } else {
+            $restaurant->categories()->sync([]);
+        }
+
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
