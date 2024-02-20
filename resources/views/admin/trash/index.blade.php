@@ -3,7 +3,10 @@
 @section('content')
 
 <div class="container">
+
   @if (count($meals) > 0)
+
+  <h2 class="mt-3 text-center">All the meal want to delete</h2>
             
         <table class="table table-striped my-5">
             <thead>
@@ -19,7 +22,7 @@
                 @foreach ($meals as $meal)
                     <tr>
                         <th scope="row">{{ $meal->name }}</th>
-                        <td>{{ $meal->price }}</td>
+                        <td>{{ $meal->price . " €" }} </td>
                         <td>{{ $meal->is_active ? "Available" : "Not available" }}</td>
                         <td>
                           <form class="d-inline-block" action="{{ route('admin.trash.restore', ['id' => $meal->id])}}" method="POST">
@@ -47,7 +50,7 @@
         </table>
 
         @else
-            <h2 class="alert alert-warning mt-3 text-center">Click the button to start the creation of your personal meals!</h2>
+            <h2 class="alert alert-warning mt-3 text-center">The Trash is empty!</h2>
         @endif
 
 
