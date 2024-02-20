@@ -50,6 +50,12 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
+        $user = Auth::user();
+        $restaurant = $user->restaurant;
+        if($restaurant) {
+            return redirect()->route('admin.restaurants.index');
+        }
+
         $form_data = $request->validated();
         $new_restaurant = new Restaurant();
         $new_restaurant->fill($form_data);
