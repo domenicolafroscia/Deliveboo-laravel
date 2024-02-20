@@ -35,7 +35,9 @@ Route::middleware(['auth','verified'])
     Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class);
     Route::resource('meals', MealController::class)->parameters(['meals' => 'meal:slug']);
-    Route::get('trash', [TrashController::class, 'index'])->name('trash');
+    Route::get('trash', [TrashController::class, 'index'])->name('trash.index');
+    Route::put('restore/{id}', [TrashController::class, 'restore'])->name('trash.restore');
+    Route::delete('delete/{id}', [TrashController::class, 'delete'])->name('trash.delete');
 });
 
 require __DIR__.'/auth.php';

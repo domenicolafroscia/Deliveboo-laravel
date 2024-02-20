@@ -12,4 +12,20 @@ class TrashController extends Controller
         $meals = Meal::onlyTrashed()->get();
         return view('admin.trash.index',compact('meals'));
     }
+
+    public function restore($id){
+
+        $meal = Meal::withTrashed()->find($id);
+        $meal->restore();
+
+        return redirect()->route('admin.trash.index');
+    }
+
+    public function delete($id){
+
+        $meal = Meal::withTrashed()->find($id);
+        $meal->forceDelete();
+
+        return redirect()->route('admin.trash.index');
+    }
 }

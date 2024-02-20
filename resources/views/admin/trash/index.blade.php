@@ -22,17 +22,24 @@
                         <td>{{ $meal->price }}</td>
                         <td>{{ $meal->is_active ? "Available" : "Not available" }}</td>
                         <td>
-                           {{--  <a class="btn btn-success" href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">
-                                <i class="fa-solid fa-info"></i>
-                            </a>
-                            <a class="btn btn-warning" href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a>
-                            <form class="d-inline-block" action="{{ route('admin.meals.destroy',['meal' => $meal->slug])}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Delete</button>
-                            </form> --}}
+                          <form class="d-inline-block" action="{{ route('admin.trash.restore', ['id' => $meal->id])}}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <button class="btn btn-success" type="submit">Restore</button>
+                          </form>
+
+                          <form class="d-inline-block" action="{{ route('admin.trash.delete', ['id' => $meal->id])}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                          </form>
+                             {{-- <a class="btn btn-success" href="{{ route('admin.trash.restore', ['id' => $meal->id]) }}">
+                                Restore
+                            </a> --}}
+                            {{-- <a class="btn btn-danger" href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">
+                                Delete
+                            </a> --}}
+                          
                         </td>
                     </tr>
                 @endforeach
