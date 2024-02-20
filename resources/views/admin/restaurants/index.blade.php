@@ -14,10 +14,30 @@
             <table class="table table-striped my-5">
                 <thead>
                     <tr>
+
+                        <th scope="row">{{ $meal->name }}</th>
+                        <td>{{ $meal->price . " €" }}</td>
+                        <td>{{ $meal->is_active ? "Available" : "Not available" }}</td>
+                        <td>
+                            <a class="btn btn-success" href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">
+                                <i class="fa-solid fa-info"></i>
+                            </a>
+                            <a class="btn btn-warning" href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+                            <form class="d-inline-block" action="{{ route('admin.meals.destroy',['meal' => $meal->slug])}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                           
+                        </td>
+
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Available</th>
                         <th scope="col">Actions</th>
+
                     </tr>
                 </thead>
 
