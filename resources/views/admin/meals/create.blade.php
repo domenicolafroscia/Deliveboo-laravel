@@ -7,7 +7,7 @@
             <div class="col">
                 <h2 class="text-center py-3">New Meal</h2>
 
-                <form class="mt-5" action="{{ route('admin.meals.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="mt-5 form-prevent-multiple-click" action="{{ route('admin.meals.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3 has-validation">
@@ -46,10 +46,14 @@
                         <img id="preview-img" src="" alt="" style="max-height: 250px">
                     </div>
 
-                    <button class="btn btn-success mt-4" type="submit">Save</button>
+                    <button id="submit" class="btn btn-success mt-4" type="submit">Save</button>
 
                 </form>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    @vite(['resources/js/prevent-double-click-form.js'])
 @endsection

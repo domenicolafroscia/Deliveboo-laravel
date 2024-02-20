@@ -109,7 +109,7 @@ class MealController extends Controller
 
         $meal->update($form_data);
 
-        return redirect()->route('admin.meals.show', ['meal' => $meal->slug]);
+        return redirect()->route('admin.meals.show');
     }
 
     /**
