@@ -120,7 +120,9 @@ class MealController extends Controller
      */
     public function destroy(Meal $meal)
     {
-        dd($meal);
+        $meal->delete();
+
+        return redirect()->route('admin.restaurants.index');
     }
 
     private function checkUser(Meal $meal) {
