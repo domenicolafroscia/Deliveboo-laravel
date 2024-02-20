@@ -24,11 +24,11 @@ class StoreRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3|max:120|',
-            'email' => 'required|email',
+            'name' => 'required|min:3|max:120|unique:restaurants,name',
+            'email' => 'required|email|unique:restaurants,email',
             'phone' => 'required|max:15',
             'address' => 'required',
-            'p_iva' => 'required|min:11|max:11',
+            'p_iva' => 'required|min:11|max:11|unique:restaurants,p_iva',
             'categories' => ['exists:categories,id', 'required']
         ];
     }
