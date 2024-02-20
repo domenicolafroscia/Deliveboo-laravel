@@ -44,7 +44,7 @@
         </div>
 
         <div class="mb-3 has-validation">
-            <label for="p_iva" class="form-label">Iva</label>
+            <label for="p_iva" class="form-label">P.Iva</label>
             <input type="text" class="form-control @error('p_iva') is-invalid @enderror" id="p_iva" name="p_iva"
                 value="{{ old('p_iva') }}">
             @error('p_iva')
