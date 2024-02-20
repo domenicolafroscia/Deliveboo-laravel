@@ -92,9 +92,14 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Restaurant $restaurant)
     {
-        //
+        $user = Auth::user();
+        if($user->id === $restaurant->user_id) {
+            return view('admin.restaurants.edit', compact('restaurant'));
+        } else {
+            abort(404);
+        }
     }
 
     /**
