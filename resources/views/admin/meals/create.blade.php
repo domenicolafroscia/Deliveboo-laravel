@@ -9,20 +9,25 @@
 
                 <form class="mt-5 form-prevent-multiple-click" action="{{ route('admin.meals.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    
+                    @if (session()->has('message'))
+                        <div class="alert alert-warning">{{ session('message') }}</div>
+                    @endif
 
                     <div class="mb-3 has-validation">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                            name="name" value="{{ old('name') }}">
+                          name="name" value="{{ old('name') }}" required>
                         @error('name')
+
                             <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+                            @enderror
+                        </div>
 
                     <div class="mb-3 has-validation">
                         <label for="price" class="form-label">Price</label>
                         <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
-                            name="price" value="{{ old('price') }}">
+                            name="price" value="{{ old('price') }}" required>
                         @error('price')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

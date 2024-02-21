@@ -5,7 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Functions\Helpers;
+use App\Models\Category;
 use App\Models\Restaurant;
+use Illuminate\Support\Facades\DB;
 
 class RestaurantsTableSeeder extends Seeder
 {
@@ -31,6 +33,8 @@ class RestaurantsTableSeeder extends Seeder
                 //dd($restaurant);
 
                 $restaurant->save();
+                $restaurant->categories()->attach($row[6]);
+                
            }
         } 
         
