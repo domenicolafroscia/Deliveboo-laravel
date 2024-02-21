@@ -21,8 +21,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $restaurant = $user->restaurant;
+        $restaurant = Auth::user()->restaurant;
         if ($restaurant) {
             $meals = Meal::where('restaurant_id', $restaurant->id)->get();
             return view('admin.restaurants.index', compact('restaurant', 'meals'));
@@ -50,8 +49,7 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-        $user = Auth::user();
-        $restaurant = $user->restaurant;
+        $restaurant = Auth::user()->restaurant;
         if ($restaurant) {
             return redirect()->route('admin.restaurants.index');
         }
@@ -95,8 +93,7 @@ class RestaurantController extends Controller
     public function edit()
     {
         $categories = Category::all();
-        $user = Auth::user();
-        $restaurant = $user->restaurant;
+        $restaurant = Auth::user()->restaurant;
         return view('admin.restaurants.edit', compact('restaurant', 'categories'));
     }
 
@@ -109,8 +106,7 @@ class RestaurantController extends Controller
      */
     public function update(UpdateRestaurantRequest $request)
     {
-        $user = Auth::user();
-        $restaurant = $user->restaurant;
+        $restaurant = Auth::user()->restaurant;
 
         $form_data = $request->validated(); 
 
