@@ -43,10 +43,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show( int $id)
     {
 
-        $order = Order::all();
+        $order = Order::findOrFail($id);
         $user = Auth::user();
         return view('admin.orders.show', compact('order', 'user'));
         
