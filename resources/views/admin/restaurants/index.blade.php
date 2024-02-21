@@ -8,7 +8,7 @@
  <div class="text-end mb-2">
             <a class="btn btn-warning" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Modify Restaurant</a>
         </div>
-        <h2 class="text-center py-3">Your Meals {{ $restaurant->name }}</h2>
+        <h2 class="text-center py-3">Your Meals</h2>
 
         <div class="text-end">
             <a class="btn btn-success" href="{{ route('admin.meals.create') }}">Create new meal</a>
