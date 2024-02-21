@@ -36,4 +36,22 @@ class OrderController extends Controller
         
         return view('admin.orders.index', compact('orders'));
     }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Order $order)
+    {
+
+        $order = Order::all();
+        $user = Auth::user();
+        return view('admin.orders.show', compact('order', 'user'));
+        
+        //$meals = Meal::all();
+        //$user = Auth::user();
+        //return view('admin.orders.show', compact('order', 'user', 'meals'));
+    }
 }
