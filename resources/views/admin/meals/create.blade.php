@@ -7,9 +7,10 @@
             <div class="col">
                 <h2 class="text-center py-3">New Meal</h2>
 
-                <form class="mt-5 form-prevent-multiple-click" action="{{ route('admin.meals.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="mt-5 form-prevent-multiple-click" action="{{ route('admin.meals.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
-                    
+
                     @if (session()->has('message'))
                         <div class="alert alert-warning">{{ session('message') }}</div>
                     @endif
@@ -17,25 +18,28 @@
                     <div class="mb-3 has-validation">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                          name="name" value="{{ old('name') }}" required>
-                        @error('name')
+                            name="name" value="{{ old('name') }}" required minlength="2" maxlength="120">
 
+                        @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
+                        @enderror
+
+                    </div>
 
                     <div class="mb-3 has-validation">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
-                            name="price" value="{{ old('price') }}" required>
+                        <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror"
+                            id="price" name="price" value="{{ old('price') }}" required min="0.01" max="999.99">
+
                         @error('price')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
+
                     </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
+                        <textarea class="form-control" id="description" rows="3" name="description" required maxlength="2000">{{ old('description') }}</textarea>
                     </div>
 
                     <div class="mb-3">
