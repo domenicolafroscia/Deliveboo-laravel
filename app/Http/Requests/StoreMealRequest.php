@@ -30,4 +30,5 @@ class StoreMealRequest extends FormRequest
             'description' => ['required', 'max:2000'],
         ];
     }
+    
 }
