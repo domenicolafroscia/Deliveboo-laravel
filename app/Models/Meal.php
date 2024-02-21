@@ -32,4 +32,8 @@ class Meal extends Model
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value);
     }
+
+    public function orders() {
+        $this->belongsToMany(Order::class)->withPivot('quantity');
+    }
 }

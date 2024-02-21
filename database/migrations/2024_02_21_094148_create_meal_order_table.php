@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('meal_order', function (Blueprint $table) {
-            $table->id();
 
             $table->unsignedBigInteger('meal_id');
             $table->foreign('meal_id')->references('id')->on('meals')->cascadeOnDelete();
@@ -24,7 +23,6 @@ return new class extends Migration
 
             $table->tinyInteger('quantity')->default(1);
 
-            $table->timestamps();
         });
     }
 
