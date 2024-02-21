@@ -7,8 +7,8 @@
             <div class="text-center row">
 
                 <div class=" col-md-6">
-                    <img src="{{ asset('storage/not-found-img.png') }} " alt=""
-                        class="img-fluid">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNRbF2c1k9SnwBoDcwhVREGcK9xWuSUCamRQ&usqp=CAU" alt=""
+                        class="img-fluid" style="height: 250px">
                 </div>
                 
                 <div class=" col-md-6 mt-5">
