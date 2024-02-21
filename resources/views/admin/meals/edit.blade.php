@@ -29,7 +29,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
+                <label for="description" class="form-label">Ingredients</label>
                 <textarea class="form-control" id="description" rows="3" name="description" required maxlength="2000">{{ old('description', $meal->description) }}</textarea>
             </div>
 
