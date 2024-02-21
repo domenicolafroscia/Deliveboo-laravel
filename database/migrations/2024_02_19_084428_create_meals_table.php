@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('meals', function (Blueprint $table) {
             $table->id();
             $table->string('name', 120);
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->string('image')->nullable();
             $table->decimal('price', 6, 2);
             $table->boolean('is_active')->default(true);

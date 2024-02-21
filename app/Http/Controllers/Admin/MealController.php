@@ -20,9 +20,9 @@ class MealController extends Controller
      */
     public function index()
     {
-        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+       /*  $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         $meals = Meal::where('restaurant_id', $restaurant->id)->get();
-        return view('admin.meals.index', compact('meals', 'restaurant'));
+        return view('admin.meals.index', compact('meals', 'restaurant')); */
     }
 
     /**
@@ -44,6 +44,19 @@ class MealController extends Controller
     public function store(StoreMealRequest $request)
     {
         $form_data = $request->validated();
+
+        //Check if the name of the meal already exist in this restaurant
+        $form_data_name = $form_data["name"];
+
+        $meals_name = Meal::where('name',$form_data_name)->get();
+       
+        foreach ($meals_name as $meal_name) {
+            if (Auth::user()->id == $meal_name['restaurant_id'] ) {
+               /* $name_error = "This name already exists in your menù, please choose another one!"; */
+               return redirect()->route('admin.meals.create')->with('message',"The name already exists in your menù, please choose another one!");
+           }          
+        } 
+        // Save the meal into db
         $meal = new Meal();
         $meal->fill($form_data);
 
