@@ -44,7 +44,7 @@
 
             <div class="image-preview mb-3">
                 @if ($meal->image)
-                    <img src="{{ asset('storage/' . $meal->image) }}" alt="" style="max-height: 250px">
+                    <img id="image-preview" src="{{ asset('storage/' . $meal->image) }}" alt="" style="max-height: 250px">
                 @endif
             </div>
 

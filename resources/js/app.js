@@ -10,8 +10,8 @@ import.meta.glob([
 ]);
 
 const previewImgElem = document.getElementById('preview-img');
-
 const image = document.getElementById('image');
+const imagePreview = document.getElementById('image-preview');
 
 if (image) {
     image.addEventListener('change', function () {
@@ -19,12 +19,16 @@ if (image) {
         if (selectedFile) {
             const reader = new FileReader();
             reader.addEventListener('load', function () {
-                previewImgElem.src = reader.result;
+                if (previewImgElem.src = reader.result) {
+                   imagePreview.remove();
+                }
             })
             reader.readAsDataURL(selectedFile);
         }
     });
 }
+
+
 
 const buttons = document.querySelectorAll('.btn-delete');
 
