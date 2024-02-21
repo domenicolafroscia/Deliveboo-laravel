@@ -10,7 +10,7 @@
         <div class="mb-3 has-validation">
             <label for="name" class="form-label">Name Restaurant</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                value="{{ old('name') }}">
+                value="{{ old('name') }}" required minlength="3" maxlength="120">
             @error('name')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -19,7 +19,7 @@
         <div class="mb-3 has-validation">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
-                value="{{ old('email') }}">
+                value="{{ old('email') }}" required>
             @error('email')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -28,7 +28,7 @@
         <div class="mb-3 has-validation">
             <label for="phone" class="form-label">Phone</label>
             <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone"
-                value="{{ old('phone') }}">
+                value="{{ old('phone') }}" required maxlength="15">
             @error('phone')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -37,7 +37,7 @@
         <div class="mb-3 has-validation">
             <label for="address" class="form-label">Address</label>
             <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
-                value="{{ old('address') }}">
+                value="{{ old('address') }}" required>
             @error('address')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -46,7 +46,7 @@
         <div class="mb-3 has-validation">
             <label for="p_iva" class="form-label">P.Iva</label>
             <input type="text" class="form-control @error('p_iva') is-invalid @enderror" id="p_iva" name="p_iva"
-                value="{{ old('p_iva') }}">
+                value="{{ old('p_iva') }}" required minlength="11" maxlength="11">
             @error('p_iva')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
