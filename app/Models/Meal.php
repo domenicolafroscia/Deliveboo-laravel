@@ -29,24 +29,11 @@ class Meal extends Model
         return $this->belongsTo(Restaurant::class);
     }
 
-   /*  public function setRestaurantidAttribute($id){
-        $this->attributes['restaurant_id'] = $id;
-        // dd($this->attributes['restaurant_id']);
-
-    } */
-   /*  static function getRestaurantid($id){
-        return $id;
-    }
-
-    static function setName($value,$id){
-        
-    } */
-
-  /*   public function setNameAttribute($value) {
+     /* public function setNameAttribute($value) {
         $this->attributes['name'] = $value;
         $restaurant = Restaurant::where('user_id',Auth::user()->id)->orWhere('user_id', $this->attributes['restaurant_id'])->first();
         $this->attributes['slug'] = Str::slug($value . "-" . $restaurant->name);
-    } */
+    }  */
 
     public function orders() {
         $this->belongsToMany(Order::class)->withPivot('quantity');

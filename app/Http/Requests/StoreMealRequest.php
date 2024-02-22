@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreMealRequest extends FormRequest
 {
@@ -24,7 +26,7 @@ class StoreMealRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required','min:2','max:120'],
+            'name' => ['required','min:2','max:120',Rule::unique('meals','name')->where(fn($query) => $query->where('restaurant_id',Auth::user()->restaurant->id))],
             'price' => ['required','min:0.01', 'max:999.99'],
             'image' => ['nullable','image', 'max:512', 'mimes:jpeg,jpg,png,gif'],
             'description' => ['required', 'max:2000'],
@@ -32,3 +34,4 @@ class StoreMealRequest extends FormRequest
     }
     
 }
+
