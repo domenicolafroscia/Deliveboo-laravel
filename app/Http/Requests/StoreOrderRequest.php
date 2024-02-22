@@ -29,8 +29,7 @@ class StoreOrderRequest extends FormRequest
             'customer_address' => 'required',
             'customer_phone' => 'required',
             'status' => 'required',
-            'meals_id' => 'required',
-            'quantity' => 'required'
+            'cart' => 'required'
         ];
     }
 }
