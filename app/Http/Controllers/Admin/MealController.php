@@ -176,8 +176,8 @@ class MealController extends Controller
     }
 
     private function checkUser(Meal $meal) {
-        $restaurant = Auth::user()->restaurant;
-        if($meal->restaurant_id !== $restaurant->id) {
+    
+        if($meal->restaurant_id !== Auth::user()->id) {
             abort(404);
         } 
     }

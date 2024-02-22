@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         // $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         // $meals = Meal::where('restaurant_id', $restaurant->id)->get();
         // $meal_id_arr = [];
@@ -25,19 +26,22 @@ class OrderController extends Controller
         // foreach($meal_orders as $meal_order) {
         //     array_push($order_id_arr, $meal_order->order_id);
         // }
-
         $restaurant = Auth::user()->restaurant;
-        $meal_id_arr = $restaurant->meals->pluck('id');
-        
-        $order_id_arr = DB::table('meal_order')->whereIn('meal_id', $meal_id_arr)->pluck('order_id');
+        if ($restaurant) {
+            $meal_id_arr = $restaurant->meals->pluck('id');
 
-        $orders = Order::whereIn('id', $order_id_arr)->get();
+            $order_id_arr = DB::table('meal_order')->whereIn('meal_id', $meal_id_arr)->pluck('order_id');
 
-        
-        return view('admin.orders.index', compact('orders'));
+            $orders = Order::whereIn('id', $order_id_arr)->get();
+
+
+            return view('admin.orders.index', compact('orders'));
+        } else {
+            return redirect()->route('admin.restaurants.create');
+        }
     }
 
-     /**
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -46,24 +50,22 @@ class OrderController extends Controller
     public function show(int $id)
     {
         $order = Order::findOrFail($id);
-        
+
         $this->verifyOrderMeals($order);
         $user = Auth::user();
         return view('admin.orders.show', compact('order', 'user'));
-        
     }
 
-    private function verifyOrderMeals(Order $order) {
+    private function verifyOrderMeals(Order $order)
+    {
         $userRestaurantId = Auth::user()->restaurant->id;
         $meals = $order->meals;
-        
-        foreach($meals as $meal){
+
+        foreach ($meals as $meal) {
             if ($meal->restaurant_id !== $userRestaurantId) {
-                abort(404); 
+                abort(404);
             };
         }
-            
-        
     }
     // private function checkUser(Meal $meal) {
     //     $restaurant = Auth::user()->restaurant;
