@@ -40,6 +40,8 @@ Route::middleware(['auth','verified'])
     Route::put('restore/{id}', [TrashController::class, 'restore'])->name('trash.restore');
     Route::delete('delete/{id}', [TrashController::class, 'delete'])->name('trash.delete');
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('orders/{id}', [OrderController::class, 'show'])->name('orders.show');
+
 });
 
 require __DIR__.'/auth.php';
