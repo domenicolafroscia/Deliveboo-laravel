@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <a class="btn btn-warning my-3" style="color: white" href="{{ route('admin.orders.index') }}"><i
-            class="fa-solid fa-arrow-rotate-left"></i> Go Back</a>
+    <a class="btn btn-warning my-3" style="color: white" href="{{ route('admin.orders.index') }}"> Go Back</a>
     <div class="container">
 
         <h2 class="text-center py-3">Info Order</h2>
@@ -58,7 +57,8 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Meal: <strong>{{ $meal->name }}</strong></li>
                             <li class="list-group-item">Price: <strong>{{ $meal->price }}</strong></li>
-                            <li class="list-group-item">Phone: <strong>{{ $meal->description }}</strong></li>
+                            <li class="list-group-item">Quantity: <strong>{{ $meal->pivot->quantity }}</strong></li>
+                            <li class="list-group-item">Ingredients: <strong>{{ $meal->description }}</strong></li>
                         </ul>
                     @endforeach
                     <ul class="list-group list-group-flush">
