@@ -43,15 +43,31 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show( int $id)
+    public function show(int $id)
     {
-
         $order = Order::findOrFail($id);
+        
+        $this->verifyOrderMeals($order);
         $user = Auth::user();
         return view('admin.orders.show', compact('order', 'user'));
         
-        //$meals = Meal::all();
-        //$user = Auth::user();
-        //return view('admin.orders.show', compact('order', 'user', 'meals'));
     }
+
+    private function verifyOrderMeals(Order $order) {
+        $userRestaurantId = Auth::user()->restaurant->id;
+        $meals = $order->meals;
+        
+        foreach($meals as $meal){
+            if ($meal->restaurant_id !== $userRestaurantId) {
+                abort(404); 
+            };
+        }
+            
+        
+    }
+    // private function checkUser(Meal $meal) {
+    //     $restaurant = Auth::user()->restaurant;
+    //     if($meal->restaurant_id !== $restaurant->id) {
+    //         abort(404);
+    //     } 
 }
