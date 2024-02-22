@@ -44,6 +44,7 @@
                         <li class="list-group-item">Name: <strong>{{ $order->customer_name }}</strong></li>
                         <li class="list-group-item">Address: <strong>{{ $order->customer_address }}</strong></li>
                         <li class="list-group-item">Phone: <strong>{{ $order->customer_phone }}</strong></li>
+                        <li class="list-group-item">Note: {{ $order->note }}</li>
                     </ul>
                 </div>
 
@@ -57,7 +58,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Meal: <strong>{{ $meal->name }}</strong></li>
                             <li class="list-group-item">Price: <strong>{{ $meal->price }}</strong></li>
-                            <li class="list-group-item">Description: <strong>{{ $meal->description }}</strong></li>
+                            <li class="list-group-item">Phone: <strong>{{ $meal->description }}</strong></li>
                         </ul>
                     @endforeach
                     <ul class="list-group list-group-flush">
