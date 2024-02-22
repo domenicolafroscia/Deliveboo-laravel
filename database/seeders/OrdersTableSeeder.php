@@ -29,7 +29,7 @@ class OrdersTableSeeder extends Seeder
             $order->customer_phone = $faker->phoneNumber();
             $order->status = $faker->boolean();
             $order->price_tot = $meal->price;
-            $order->note = $faker->realText($maxNbChars = 100, $indexSize = rand(1,2));
+            $order->customer_note = $faker->realText($maxNbChars = 100, $indexSize = rand(1,2));
             $order->save();
             $order->meals()->attach($meal->id, ['quantity' => 1]);
         }
