@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class Meal extends Model
@@ -28,10 +29,24 @@ class Meal extends Model
         return $this->belongsTo(Restaurant::class);
     }
 
-    public function setNameAttribute($value) {
-        $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+   /*  public function setRestaurantidAttribute($id){
+        $this->attributes['restaurant_id'] = $id;
+        // dd($this->attributes['restaurant_id']);
+
+    } */
+   /*  static function getRestaurantid($id){
+        return $id;
     }
+
+    static function setName($value,$id){
+        
+    } */
+
+  /*   public function setNameAttribute($value) {
+        $this->attributes['name'] = $value;
+        $restaurant = Restaurant::where('user_id',Auth::user()->id)->orWhere('user_id', $this->attributes['restaurant_id'])->first();
+        $this->attributes['slug'] = Str::slug($value . "-" . $restaurant->name);
+    } */
 
     public function orders() {
         $this->belongsToMany(Order::class)->withPivot('quantity');
