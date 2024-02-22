@@ -11,8 +11,9 @@
                     <th scope="col">ID</th>
                     <th scope="col">Price Tot</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Date</th>
                     <th scope="col">Actions</th>
-                    <th scope="col">Meal</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -24,10 +25,10 @@
 
                             <td>{{ $order->status }}</td>
                             <td>
-                                
+                                {{$order->created_at}}
                             </td>
 
-                            <td class="text-center">
+                            <td>
                                 <a class="btn btn-success" href="{{route('admin.orders.show', $order)}}">Detail Order</a> 
                             </td>
                             
