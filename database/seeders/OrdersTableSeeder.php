@@ -18,7 +18,7 @@ class OrdersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 1; $i < 9; $i++) {
+        for ($i = 1; $i < 30; $i++) {
 
             $tot = 0;
             $quantity = rand(1,9);
