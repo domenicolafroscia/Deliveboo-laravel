@@ -11,9 +11,9 @@
                     enctype="multipart/form-data">
                     @csrf
 
-                    @if (session()->has('message'))
+                   {{--  @if (session()->has('message'))
                         <div class="alert alert-warning">{{ session('message') }}</div>
-                    @endif
+                    @endif --}}
 
                     <div class="mb-3 has-validation">
                         <label for="name" class="form-label">Name</label>

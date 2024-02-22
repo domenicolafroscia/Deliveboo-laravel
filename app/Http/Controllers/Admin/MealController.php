@@ -10,6 +10,7 @@ use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class MealController extends Controller
 {
@@ -46,18 +47,21 @@ class MealController extends Controller
         $form_data = $request->validated();
 
         //Check if the name of the meal already exist in this restaurant
-        $form_data_name = $form_data["name"];
+      /*   $form_data_name = $form_data["name"];
 
         $meals_name = Meal::where('name',$form_data_name)->get();
        
         foreach ($meals_name as $meal_name) {
             if (Auth::user()->id == $meal_name['restaurant_id'] ) {
-               /* $name_error = "This name already exists in your menù, please choose another one!"; */
+               
                return redirect()->route('admin.meals.create')->with('message',"The name already exists in your menù, please choose another one!");
            }          
-        } 
+        }   */
         // Save the meal into db
         $meal = new Meal();
+        $restaurant = Restaurant::where('user_id',Auth::user()->id)->first();
+
+        $meal->slug = Str::slug($form_data["name"] . "-" . $restaurant->name);
         $meal->fill($form_data);
 
         if($request->hasFile('image')) {
@@ -80,7 +84,9 @@ class MealController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Meal $meal)
-    {
+    {   
+        /* $meal= Meal::findOrFail($id); */
+        
         $this->checkUser($meal);
 
         return view('admin.meals.show', compact('meal'));
@@ -94,6 +100,7 @@ class MealController extends Controller
      */
     public function edit(Meal $meal)
     {
+        /* $meal= Meal::findOrFail($id); */
         $this->checkUser($meal);
         return view('admin.meals.edit', compact('meal'));
     }
@@ -107,9 +114,34 @@ class MealController extends Controller
      */
     public function update(UpdateMealRequest $request, Meal $meal)
     {
-        $this->checkUser($meal);
-
         $form_data = $request->validated(); 
+         //Check if the name of the meal already exist in this restaurant
+          
+        /* dd($form_data["name"]); */
+
+        /* $meal = Meal::where('name',$form_data["name"])->where('restaurant_id',Auth::user()->id)->first(); */
+        
+        /* if($form_data["name"] == $meal->name){
+
+        } */
+         /* if($meal_id['name'] == $meal['name']){
+            
+         }  */
+
+        /* if (!($meal['id'] === $meal_id->id)) { */
+          /*   $meals_name = Meal::where('name',$form_data_name)->get();
+           if($meals_name){
+             foreach ($meals_name as $meal_name) {
+                if ((Auth::user()->id == $meal_name['restaurant_id']) && ($meal_name['name'] == $meal['name']) && ($meal['id'] != $meal_name['id'])) {
+                   
+                   return redirect()->route('admin.meals.edit',['meal'=>$meal->slug])->with('message',"The name already exists in your menù, please choose another one!");
+               }          
+            }
+            } */
+            
+       /*  } */
+         
+         $this->checkUser($meal);
 
         if($request->hasFile('image')) {
             if($meal->image) {
@@ -120,7 +152,11 @@ class MealController extends Controller
             $form_data['image'] = $path;
         }
 
+        $restaurant = Restaurant::where('user_id',$meal->restaurant_id )->first();
+        $meal->slug = Str::slug($form_data["name"] . "-" . $restaurant->name);
         $meal->update($form_data);
+        
+
 
         return redirect()->route('admin.meals.show', compact('meal'));
     }
@@ -133,6 +169,7 @@ class MealController extends Controller
      */
     public function destroy(Meal $meal)
     {
+        /* $meal = Meal::findOrFail($id); */
         $meal->delete();
 
         return redirect()->route('admin.restaurants.index');
