@@ -31,7 +31,7 @@
     <div class="mb-3 has-validation">
         <label for="phone" class="form-label">Phone</label>
         <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone"
-            value="{{ old('phone', $restaurant->phone) }}" required maxlength="15">
+            value="{{ old('phone', $restaurant->phone) }}" required minlength="10" maxlength="15">
         @error('phone')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
