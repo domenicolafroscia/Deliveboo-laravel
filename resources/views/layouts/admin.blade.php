@@ -85,7 +85,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.orders.index') }}">
-                                    <i class="fa-solid fa-pen-to-square fa-lg fa-fw"></i> Order
+                                    <i class="fa-solid fa-pen-to-square fa-lg fa-fw"></i> Orders
                                 </a>
                             </li>
                         </ul>
