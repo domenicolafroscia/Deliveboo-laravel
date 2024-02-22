@@ -23,9 +23,10 @@ class MealsTableSeeder extends Seeder
             if ($index !== 0) {
                 $meal = new Meal();
                 $meal->name = $row[0];
-                $meal->price = $row[1];
-                $meal->description = $row[2];
-                $meal->restaurant_id = $row[3];
+                $meal->image = $row[1];
+                $meal->price = $row[2];
+                $meal->description = $row[3];
+                $meal->restaurant_id = $row[4];
                
                 $meal->save();
             }

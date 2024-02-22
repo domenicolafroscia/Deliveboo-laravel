@@ -7,7 +7,7 @@
     </div>
 
     @if ($meal->image)
-        <img src="{{ asset('storage/' . $meal->image) }}" alt="{{ $meal->name }}" style="max-height: 250px">
+        <img src="{{ $meal->image }}" alt="{{ $meal->name }}" style="max-height: 250px">
     @else
         <h5 class="text-center">Image not found</h5>
     @endif

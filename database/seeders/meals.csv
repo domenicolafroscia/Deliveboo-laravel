@@ -1,41 +1,146 @@
-name,price,description,restaurant_id
-Margherita,7.50,"Tomato, mozzarella, basil",1
-Four Seasons,9.00,"Tomato, mozzarella, mushrooms, ham, artichokes",1
-Diavola,8.50,"Tomato, mozzarella, spicy salami, chili peppers",1
-Capricciosa,9.50,"Tomato, mozzarella, mushrooms, ham, olives, artichokes",1
-Calzone,8.00,"Tomato, mozzarella, ham, mushrooms",1
-Sushi Maki,12.00,"Rice, raw fish, nori seaweed, cucumber, avocado",2
-Sashimi,15.00,"Raw fish",2
-Tonkotsu Ramen,10.50,"Noodles, pork broth, cooked pork, boiled egg, green onion, mushrooms",2 
-Teriyaki Chicken,11.00,"Chicken, teriyaki sauce, rice",2
-Gyoza,8.50,"Minced meat, vegetables, soy sauce",2
-Moussaka,10.50,"Eggplant, minced meat, potatoes, cheese, béchamel sauce",3
-Gyros,9.00,"Pork meat, pita bread, tzatziki sauce, lettuce, tomato, onion",3
-Souvlaki,8.50,"Pork meat skewers, tzatziki sauce, fries",3
-Greek Salad,7.00,"Tomato, cucumber, olives, red onion, feta cheese, oregano, olive oil",3 
-Tzatziki,4.00,"Greek yogurt, cucumber, garlic, olive oil, parsley",3
-Vegan Burger,9.00,"Chickpea burger, wholemeal bun, lettuce, tomato, cucumber, red onion, avocado",4
-Vegan Pad Thai,11.50,"Rice noodles, tofu, vegetables, soy sauce, lime",4
-Falafel Wrap,8.00,"Falafel, wholemeal pita bread, hummus, lettuce, tomato, onion",4
-Quinoa Bowl,10.00,"Quinoa, avocado, chickpeas, grilled vegetables, tahini sauce",4
-Vegan Pizza,10.50,"Tomato, vegan mozzarella, mixed vegetables, black olives, mushrooms",4 
-Lasagna,12.00,"Egg pasta, minced meat, sauce, mozzarella, parmesan cheese",5
-Spaghetti Carbonara,11.50,"Spaghetti, pancetta, eggs, parmesan cheese, black pepper",5
-Mushroom Risotto,13.00,"Rice, porcini mushrooms, vegetable broth, onion, white wine, parmesan cheese, parsley",5
-Penne all'Arrabbiata,9.00,"Penne, tomato, chili, garlic, olive oil, parsley",5
-Caprese Salad,8.50,"Tomato, buffalo mozzarella, basil, olive oil, salt",5
-Kung Pao Chicken,10.50,"Chicken, peanuts, chili, onion, soy sauce, ginger, garlic",6 
-Mapo Tofu,9.00,"Tofu, minced pork, fermented beans, chili, onion, garlic, ginger",6
-Sweet and Sour Pork,11.00,"Pork meat, pineapple, bell peppers, onion, sweet and sour sauce",6 
-Chow Mein,8.50,"Noodles, pork meat, vegetables, soy sauce, garlic, ginger",6
-Dim Sum,9.50,"Various dumplings",6
-Cheeseburger,7.50,"Bun, beef patty, cheese, lettuce, tomato, ketchup, mayonnaise",7
-Chicken Nuggets,6.00,"Chicken, breading, ketchup",7
-Hot Dog,5.50,"Sausage, bun, ketchup, mustard, onion",7
-French Fries,4.00,"Potatoes",7
-Milkshake,5.00,"Ice cream, milk, chocolate or strawberry syrup",7
-Doner Kebab,8.00,"Pork meat, pita bread, lettuce, tomato, onion, tzatziki sauce",8
-Shawarma,9.00,"Chicken meat, pita bread, lettuce, tomato, onion, tahini sauce",8
-Falafel Plate,10.50,"Falafel, lettuce, tomato, onion, hummus, pita bread",8 
-Chicken Kebab,9.50,"Chicken skewers, pita bread, lettuce, tomato, onion, yogurt sauce",8
-Kofta Kebab,9.00,"Meatballs, pita bread, lettuce, tomato, onion, tahini sauce",8
+name,image,price,description,restaurant_id
+Margherita,https://images.ctfassets.net/nw5k25xfqsik/64VwvKFqxMWQORE10Tn8pY/200c0538099dc4d1cf62fd07ce59c2af/20220211142754-margherita-9920.jpg,7.50,"Tomato, mozzarella, basil",1
+Four Seasons,https://as2.ftcdn.net/v2/jpg/01/79/46/39/1000_F_179463969_fkmP2nNsv85EZnea8SvjJgEaTRfNC9Lh.jpg,9.00,"Tomato, mozzarella, mushrooms, ham, artichokes",1
+Diavola,https://www.silviocicchi.com/pizzachef/wp-content/uploads/2015/03/d2.jpg,8.50,"Tomato, mozzarella, spicy salami, chili peppers",1
+Capricciosa,https://www.melarossa.it/wp-content/uploads/2021/02/pizza-capricciosa.jpg,9.50,"Tomato, mozzarella, mushrooms, ham, olives, artichokes",1
+Calzone,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Hpe3Up28Fe5KcCudPivbneRlmcf7BiCKR71W929xAA&s,8.00,"Tomato, mozzarella, ham, mushrooms",1
+Sushi Maki,https://img.freepik.com/free-photo/maki-sushi-isolated-white_2829-7304.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705795200&semt=ais,12.00,"Rice, raw fish, nori seaweed, cucumber, avocado",2
+Sashimi,https://www.shutterstock.com/image-photo/famous-japanese-menu-salmon-sashimi-260nw-1709452699.jpg,15.00,"Raw fish",2
+Tonkotsu Ramen,https://media.istockphoto.com/id/1406672650/photo/japanese-tonkotsu-ramen.jpg?s=612x612&w=0&k=20&c=XfwavYs_chHo-S-M7IWoK7IxEXzYxd3dFyihnvC_zkI=,10.50,"Noodles, pork broth, cooked pork, boiled egg, green onion, mushrooms",2 
+Teriyaki Chicken,https://drivemehungry.com/wp-content/uploads/2021/11/chicken-teriyaki-4.jpg,11.00,"Chicken, teriyaki sauce, rice",2
+Gyoza,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDrUWTBFSrprYMZQ3zXCxGa_gDGWZXQsyKh3GmOfWgGw&s,8.50,"Minced meat, vegetables, soy sauce",2
+Moussaka,https://www.recipetineats.com/wp-content/uploads/2019/03/Greek-Moussaka_3-re-edited-SQ.jpg,10.50,"Eggplant, minced meat, potatoes, cheese, béchamel sauce",3
+Gyros,https://t4.ftcdn.net/jpg/03/13/50/71/360_F_313507159_6Y1UnTwolwy7a9C7QxAjAWuqaxXoBxo8.jpg,9.00,"Pork meat, pita bread, tzatziki sauce, lettuce, tomato, onion",3
+Souvlaki,https://images.squarespace-cdn.com/content/v1/5aa690d0a9e0283d7347db9c/1548090167557-PQUKSY1A6EHYW2WQCUP3/BBQPorkKebab.jpg,8.50,"Pork meat skewers, tzatziki sauce, fries",3
+Greek Salad,https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/08/Greek-Salad-main.jpg,7.00,"Tomato, cucumber, olives, red onion, feta cheese, oregano, olive oil",3 
+Tzatziki,https://upload.wikimedia.org/wikipedia/commons/2/22/Tzatziki_IMGP1480.jpg,4.00,"Greek yogurt, cucumber, garlic, olive oil, parsley",3
+Vegan Burger,https://media.istockphoto.com/id/1331109186/photo/close-up-of-a-veggie-burger-with-copy-space.jpg?s=612x612&w=0&k=20&c=I9QgB8ar8CF8VmkN4U9gleYBWwADSl-tCYQ86OH679w=,9.00,"Chickpea burger, wholemeal bun, lettuce, tomato, cucumber, red onion, avocado",4
+Vegan Pad Thai,https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/01/healthier-vegan-pad-thai-macro-1024x1536.jpg,11.50,"Rice noodles, tofu, vegetables, soy sauce, lime",4
+Falafel Wrap,https://b2427937.smushcdn.com/2427937/wp-content/uploads/2016/01/What-the-pitta-falafel-wrap.jpg?lossy=1&strip=1&webp=1,8.00,"Falafel, wholemeal pita bread, hummus, lettuce, tomato, onion",4
+Quinoa Bowl,https://www.eatingbirdfood.com/wp-content/uploads/2022/11/mediterranean-quinoa-bowl-hero.jpg,10.00,"Quinoa, avocado, chickpeas, grilled vegetables, tahini sauce",4
+Vegan Pizza,https://cdn.loveandlemons.com/wp-content/uploads/2018/09/vegan-pizza.jpg,10.50,"Tomato, vegan mozzarella, mixed vegetables, black olives, mushrooms",4 
+Lasagna,https://thecozycook.com/wp-content/uploads/2022/04/Lasagna-Recipe-f.jpg,12.00,"Egg pasta, minced meat, sauce, mozzarella, parmesan cheese",5
+Spaghetti Carbonara,https://www.allrecipes.com/thmb/cuDcxfQAvVOALbKcdoIzXPwqQMo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4499842-257380-AR-spaghetti-alla-carbonara-tradizionali-buckwheat-queen-4x3-eb4e48956fbd4277adcc3556e3bf6ecc.jpg,11.50,"Spaghetti, pancetta, eggs, parmesan cheese, black pepper",5
+Mushroom Risotto,https://img.freepik.com/free-photo/vegetarian-risotto-with-fresh-mushrooms-parmesan-cheese-generated-by-ai_188544-10223.jpg,13.00,"Rice, porcini mushrooms, vegetable broth, onion, white wine, parmesan cheese, parsley",5
+Penne all'Arrabbiata,https://www.fattoincasadabenedetta.it/wp-content/uploads/2022/03/AdobeStock_325292847-scaled.jpg,9.00,"Penne, tomato, chili, garlic, olive oil, parsley",5
+Caprese Salad,https://www.cookingclassy.com/wp-content/uploads/2020/07/caprese-salad-33.jpg,8.50,"Tomato, buffalo mozzarella, basil, olive oil, salt",5
+Kung Pao Chicken,https://rasamalaysia.com/wp-content/uploads/2019/03/kung-pao-chicken-thumb.jpg,10.50,"Chicken, peanuts, chili, onion, soy sauce, ginger, garlic",6 
+Mapo Tofu,https://media.istockphoto.com/id/177836555/photo/mapo-tofu-sichuan-style.jpg?s=612x612&w=0&k=20&c=z_JtjZBo8xxuMOgGW978jsTOL8hZoaUfgRngiYWWIz8=,9.00,"Tofu, minced pork, fermented beans, chili, onion, garlic, ginger",6
+Sweet and Sour Pork,https://www.recipetineats.com/wp-content/uploads/2020/08/Sweet-and-Sour-Pork_7-SQ.jpg,11.00,"Pork meat, pineapple, bell peppers, onion, sweet and sour sauce",6 
+Chow Mein,https://t4.ftcdn.net/jpg/02/94/95/95/360_F_294959511_536HlgQVuK77Jo0NIU80ZrFRS0qFabIV.jpg,8.50,"Noodles, pork meat, vegetables, soy sauce, garlic, ginger",6
+Dim Sum,https://thumbs.dreamstime.com/b/chinese-dimsum-set-yumcha-bamboo-container-60788502.jpg,9.50,"Various dumplings",6
+Cheeseburger,https://media.istockphoto.com/id/520410807/it/foto/cheeseburger.jpg?s=612x612&w=0&k=20&c=GDENzVNof2rJ3VPyIlwq899kGHgZ_GEfqNCd4r2Sh28=,7.50,"Bun, beef patty, cheese, lettuce, tomato, ketchup, mayonnaise",7
+Chicken Nuggets,https://upload.wikimedia.org/wikipedia/commons/3/34/Crispy_chicken_nuggets.jpg,6.00,"Chicken, breading, ketchup",7
+Hot Dog,https://dinnersdishesanddesserts.com/wp-content/uploads/2022/02/Air-Fryer-Hot-Dogs-square-scaled.jpg.webp,5.50,"Sausage, bun, ketchup, mustard, onion",7
+French Fries,https://www.oregoncc.org/sites/default/files/styles/content_image/public/2015/07/06/French%20Fries.jpg?itok=ZdQLqloM,4.00,"Potatoes",7
+Milkshake,https://media.istockphoto.com/id/926990564/it/foto/latte-al-cioccolato-e-panna-montata.jpg?s=612x612&w=0&k=20&c=bpV1YHXYMVvE5mNgw8fLGrZfFu5FFDZByeVQbUbv2K0=,5.00,"Ice cream, milk, chocolate or strawberry syrup",7
+Doner Kebab,https://www.themanual.com/wp-content/uploads/sites/9/2023/07/Doner-Haus-chicken.jpg?fit=800%2C532&p=1,8.00,"Pork meat, pita bread, lettuce, tomato, onion, tzatziki sauce",8
+Shawarma,https://t3.ftcdn.net/jpg/03/09/85/36/360_F_309853648_yJJrVCYncv1D4raXzSH39WUlrRMLEwv3.jpg,9.00,"Chicken meat, pita bread, lettuce, tomato, onion, tahini sauce",8
+Falafel Plate,https://st.depositphotos.com/1373322/5125/i/450/depositphotos_51255899-stock-photo-falafel-on-lettuce-with-tzatziki.jpg,10.50,"Falafel, lettuce, tomato, onion, hummus, pita bread",8 
+Chicken Kebab,https://media.istockphoto.com/id/912629972/photo/chicken-kebab-with-bell-pepper.jpg?s=612x612&w=0&k=20&c=d9LhLaL-prEprEFKp-P1nKjnTG4si89jFbL9PD79vRI=,9.50,"Chicken skewers, pita bread, lettuce, tomato, onion, yogurt sauce",8
+Kofta Kebab,https://www.shutterstock.com/image-photo/traditional-middle-east-kefta-kofta-260nw-1637096575.jpg,9.00,"Meatballs, pita bread, lettuce, tomato, onion, tahini sauce",8
+Siciliana,https://pizzeriahappydays.it/wp-content/uploads/2020/05/siciliana-con-tagliere.jpg,9.00,"Tomato, mozzarella, anchovies, capers, olives",9
+Pesto Genovese,https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2023/08/pizza-al-pesto-still-life-ok.jpg,10.00,"Pesto sauce, mozzarella, pine nuts, Parmesan cheese",9
+Bufalina,https://fiordigrano.minutocaffe.it/wp-content/uploads/2021/01/05331.jpg,11.00,"Tomato, buffalo mozzarella, basil",9
+Frutti di Mare,https://previews.123rf.com/images/kittiponkaabb/kittiponkaabb2305/kittiponkaabb230500358/204423654-pizza-ai-frutti-di-mare-su-sfondo-scuro-men%C3%B9-del-ristorante-di-pesce.jpg,12.50,"Tomato, mozzarella, mixed seafood",9
+Tartufo,https://www.selektiatartufi.it/wp-content/uploads/2021/01/pizza-al-tartufo-930x620.jpg,13.00,"Mozzarella, truffle cream, mushrooms, Parmesan",9
+Tempura Udon,https://carmyy.com/wp-content/uploads/2022/02/Tempura-Udon-9.jpg,12.00,"Noodles, tempura shrimp, broth",10
+Katsu Don,https://www.shutterstock.com/image-photo/crispy-katsu-chicken-sauce-rice-600nw-2375571409.jpg,13.50,"Rice, breaded pork cutlet, egg, onions",10
+Unagi Don,https://www.funkyasiankitchen.com/wp-content/uploads/2021/11/UNAGI-DON-prep-photo-17.jpg,14.00,"Rice, grilled eel, soy sauce",10
+Spicy Tuna Roll,https://t3.ftcdn.net/jpg/04/24/24/46/360_F_424244621_ig9OkjObJLvHwNK8or2n6eaM9gvsQrqz.jpg,11.50,"Rice, spicy tuna, nori seaweed, avocado",10
+Yakitori,https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Yakitori.jpg/1200px-Yakitori.jpg,9.50,"Chicken skewers, teriyaki sauce",10
+Spanakopita,https://www.heart.org/-/media/Images/Healthy-Living/Recipes/Spanakopita_Greek_recipe.jpg?h=675&w=1200&hash=D1BBB2BBC8CA2067F0EE6E2A53D46197,8.00,"Spinach, feta cheese, filo pastry",11
+Dolmades,https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2017/06/istock-920393181.jpg,7.50,"Grape leaves, rice, herbs",11
+Baklava,https://img.freepik.com/premium-photo/pistachio-baklava-white-background-dessert_188078-2287.jpg,5.50,"Filo pastry, nuts, honey",11
+Fasolada,https://oldwayspt.org/sites/default/files/thumbnails/image/fasolada.jpg,9.00,"Bean soup, olive oil, vegetables",11
+Mezedes,https://media-cdn.tripadvisor.com/media/photo-s/1b/63/1e/80/antipasto-mezedes.jpg,12.00,"Basmati rice, vine leaves, minced veal, garlic, onion",11
+Seitan Steak,https://seitansociety.com/wp-content/uploads/2022/06/Vegan-Steaks.jpg,12.00,"Seitan, vegan gravy, mashed potatoes",12
+Vegan Caesar Salad,https://www.noracooks.com/wp-content/uploads/2022/06/vegan-caesar-salad-4.jpg,9.00,"Romaine, vegan parmesan, croutons, vegan Caesar dressing",12
+Vegan Lasagna,https://vancouverwithlove.com/wp-content/uploads/2020/10/vegan-lentil-lasagna.jpg.webp,13.00,"Zucchini, vegan ricotta, spinach, tomato sauce",12
+Vegan Cheesecake,https://w4s8p5t8.rocketcdn.me/wp-content/uploads/2022/05/no-bake-vegan-cheesecake.jpg,7.50,"Cashe,ased, graham cracker crust, fruit topping",12
+Vegan Bolognese,https://schoolnightvegan.com/wp-content/uploads/2022/02/vegan-bolognese-17.jpg,11.00,"Lentils, tomato sauce, spaghetti",12
+Ravioli di Ricotta e Spinaci,https://www.cucchiaio.it/content/cucchiaio/it/ricette/2012/05/ricetta-ravioli-ricotta-spinaci/jcr:content/imagePreview.img10.jpg/1542896337028.jpg,12.00,"Ravioli, ricotta, spinach, tomato sauce",13
+Ossobuco alla Milanese,https://static.wikia.nocookie.net/milano/images/4/49/Ossobuco_alla_milanese_con_risotto_allo_zafferano.jpg/revision/latest?cb=20230730185141&path-prefix=it,16.00,"Veal shanks, vegetables, white wine, broth, served with risotto",13
+Fettuccine Alfredo,https://www.aheadofthyme.com/wp-content/uploads/2021/09/fettuccine-alfredo.jpg,11.00,"Fettuccine, butter, Parmesan cheese",13
+Saltimbocca alla Romana,https://www.giallozafferano.it/images/ricette/204/20401/foto_hd/hd650x433_wm.jpg,14.50,"Veal, prosciutto, sage, white wine sauce",13
+Bruschetta,https://media.istockphoto.com/id/1181611076/it/foto/bruschetta-italiana-fatta-in-casa-su-tavolo-rustico-in-legno.jpg?s=612x612&w=0&k=20&c=1zS6O9h9qMhHgHwtydkw_ZOgKdcPzgO-CRmn9cblxxo=,6.50,"Grilled bread, garlic, tomatoes, basil, olive oil",13
+Beef and Broccoli,https://www.kitchensanctuary.com/wp-content/uploads/2021/01/Beef-and-Broccoli-square-FS.jpg,10.50,"Beef slices, broccoli, ginger, garlic, soy sauce",14
+Peking Duck,https://redhousespice.com/wp-content/uploads/2022/01/sliced-peking-duck-with-pancakes-scaled.jpg,22.00,"Roasted duck, crispy skin, thin pancakes, spring onions, cucumber, sweet bean sauce",14
+Szechuan Shrimp,https://www.honestfoodtalks.com/wp-content/uploads/2022/09/szechuan-shrimp-with-vegetables.jpg,12.00,"Shrimp, spicy Szechuan sauce, vegetables",14
+Egg Foo Young,https://www.recipetineats.com/wp-content/uploads/2019/02/Egg-Foo-Yung-5-SQ.jpg,9.50,"Omelette, vegetables, chicken or shrimp, gravy",14
+Sesame Chicken,https://images.getrecipekit.com/20220921153135-sesame-chicken-2.png?aspect_ratio=16:9&quality=90&,11.00,"Crispy chicken, sweet and savory sesame sauce",14
+BBQ Ribs,https://redhotandblue.com/wp-content/uploads/2022/04/st-louis-style-ribs.jpg,15.00,"Pork ribs, BBQ sauce, served with fries",15
+Mac and Cheese,https://thebakermama.com/wp-content/uploads/2014/09/IMG_1588-scaled.jpg,8.00,"Macaroni, creamy cheese sauce, breadcrumbs",15
+Caesar Salad,https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2021/07/Caesar-salad-0D6A0393.jpg,7.00,"Romaine lettuce, croutons, Parmesan cheese, Caesar dressing",15
+Pulled Pork Sandwich,https://saltpepperskillet.com/wp-content/uploads/pulled-pork-sandwiches-on-butcher-paper-horizontal.jpg,10.00,"Slo,ooked pork, BBQ sauce, coleslaw, bun",15
+Buffalo Wings,https://mccormick.widen.net/content/n0phdkxdlp/jpeg/Franks_RedHot_Buffalo_Chicken_Wings.jpg,9.50,"Chicken wings, spicy buffalo sauce, blue cheese dressing",15
+Baba Ganoush,https://beautyfoodblog.com/wp-content/uploads/2020/09/ricetta-babaganoush-facile-e-veloce-how-to-make-easy-creamy-baba-ganoush-recipe.jpg,6.50,"Eggplant, tahini, garlic, lemon juice, olive oil",16
+Mujaddara,https://feelgoodfoodie.net/wp-content/uploads/2019/04/Mujadara-14.jpg,7.00,"Lentils, rice, caramelized onions",16
+Tabbouleh,https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flickr_-_cyclonebill_-_Tabbouleh.jpg/2560px-Flickr_-_cyclonebill_-_Tabbouleh.jpg,6.00,"Parsley, bulgur, tomato, lemon, olive oil",16
+Hummus,https://hips.hearstapps.com/hmg-prod/images/hummus-horizontal-jpg-1525126330.jpg,5.50,"Chickpeas, tahini, garlic, lemon juice",16
+Pita Bread,https://hips.hearstapps.com/hmg-prod/images/delish-190621-homemade-pita-0159-landscape-pf-1567692674.jpg,2.00,"Soft, fluffy bread, served warm",16
+Focaccia Barese,https://www.finedininglovers.it/sites/g/files/xknfdk1106/files/2022-02/focaccia%20barese%20-%20Fine%20Dining%20Lovers.jpg,6.00,"Flatbread, tomatoes, olives, oregano",17
+Gamberi alla Busara,https://www.ilblogdicuciniamo.it/wp-content/uploads/2017/03/busara2-800x600.jpg,15.00,"Shrimp, garlic, tomato sauce, parsley",17
+Polenta e Osei,https://www.casapappagallo.it/storage/19585/polenta-e-osei.jpg,12.00,"Polenta, bird meat, mushroom sauce",17
+Risotto al Nero di Seppia,https://casadivita.despar.it/app/uploads/2020/12/risotto-seppia.jpg,14.00,"Rice, cuttlefish, black ink, onions",17
+Sarde in Saor,https://www.fattoincasadabenedetta.it/wp-content/uploads/2023/02/SARDE-IN-SAOR-1000x560-sito_cover.jpg,10.00,"Sardines, onions, vinegar, pine nuts, raisins",17
+Nikujaga,https://upload.wikimedia.org/wikipedia/commons/a/ac/Braised_pork_and_potatoes_%283089327692%29.jpg,11.00, "Beef, potatoes, onions, sweet soy",18
+Chawanmushi,https://upload.wikimedia.org/wikipedia/commons/f/ff/Chawan_Mushi_in_Honolulu%2C_Hawaii.jpg,7.50,"Egg custard, chicken, shrimp, mushroom",18
+Kare Raisu,https://as1.ftcdn.net/v2/jpg/02/93/76/28/1000_F_293762838_fzuq5HK5Ca1VS1JorbzU5ir81MLKCfKh.jpg,10.00,"Rice, Japanese curry, meat, vegetables",18
+Oyakodon,https://t4.ftcdn.net/jpg/04/47/89/23/360_F_447892381_03wZVz8IIgEnZAWdLAno9Y5cOnpbU5up.jpg,9.00,"Chicken, egg, onion, rice",18
+Udon con Tempura,https://previews.123rf.com/images/topntp/topntp1804/topntp180403147/99418254-tagliatelle-di-ramon-udon-con-tempura-di-gamberi-isolato-su-sfondo-bianco.jpg,13.00,"Udon noodles, tempura shrimp, broth",18
+Kolokythoanthoi,https://greekcitytimes.com/wp-content/uploads/2017/06/IMG_9024-1200x900.jpg,7.50, "Stuffed zucchini flowers, rice, herbs",19
+Kotopita,https://4.bp.blogspot.com/-SvllnGxNjuE/T47UJSro9VI/AAAAAAAAAAY/yqk02VSjVwY/s1600/kotopita.jpg,9.00, "Chicken pie, filo pastry, feta cheese",19
+Melitzanosalata,https://www.misya.info/wp-content/uploads/2015/04/Melitzanosalata.jpg,6.00, "Eggplant dip, garlic, olive oil, lemon",19
+Fava,https://www.solonatura.bio/blog/wp-content/uploads/2019/03/fava-big-1030x608.jpeg,5.50, "Yellow split pea puree, onions, olive oil",19
+Galaktoboureko,https://www.dianekochilas.com/wp-content/uploads/2020/02/galaktoboureko-930x620.jpg,7.00, "Custard pie, filo, syrup",19
+Vegan Mushroom Stroganoff,https://rainbowplantlife.com/wp-content/uploads/2019/02/stroganoff11of1-819x1024-1.jpg,12.00,"Mushrooms, vegan sour cream, pasta",20
+Vegan Chili,https://lovingitvegan.com/wp-content/uploads/2022/04/Vegan-Chili-Square.jpg,10.00,"Beans, tomatoes, vegan ground meat, spices",20
+Vegan Cobb Salad,https://simple-veganista.com/wp-content/uploads/2019/07/vegan-cobb-salad_.jpg,9.50,"Lettuce, vegan bacon, avocado, vegan cheese",20
+Vegan Banana Bread,https://lovingitvegan.com/wp-content/uploads/2021/01/Vegan-Banana-Bread-15.jpg,5.00,"Banana, flour, vegan butter, walnuts",20
+Vegan Shepherd's Pie,https://elavegan.com/wp-content/uploads/2021/12/a-piece-of-vegan-Shepherds-pie-on-a-small-plate.jpg,11.00,"Lentils, vegetables, mashed potato topping",20
+Carpaccio di Manzo,https://www.giallozafferano.it/images/6-644/Carpaccio-di-manzo-con-rucola-e-grana_780x520_wm.jpg,14.00,"Thinly sliced raw beef, arugula, Parmesan",21
+Pappa al Pomodoro,https://www.cucchiaio.it/content/cucchiaio/it/ricette/2012/01/ricetta-pappa-pomodoro/jcr:content/header-par/image_single.img10.jpg/1503951891130.jpg,8.00,"Tomato bread soup, garlic, basil, olive oil",21
+Cacciucco,https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cacciucco.jpg/1200px-Cacciucco.jpg,16.50,"Fish stew, tomatoes, garlic, chili pepper",21
+Vitello Tonnato,https://media.istockphoto.com/id/1074239904/it/foto/piatto-di-fette-di-carne-di-carne-di-mare-con-maionese-di-tonno-e-capperi.jpg?s=612x612&w=0&k=20&c=tHlxUNTU3Fh0Thq2PBZZPNrTu9uzJjGcumLRmPFRgjM=,15.00,"Thinly sliced veal, creamy tuna sauce, capers",21
+Zuppa Toscana,https://www.microbiologiaitalia.it/wp-content/uploads/2023/08/zuppa-toscana.jpg,9.00,"Sausage, potatoes, kale, onions, cream",21
+Dragon and Phoenix,https://wokstarchinese.com/wp-content/uploads/2021/04/Dragon-and-phoenix-WokStarChineseMenu-499C.jpg,14.00,"Spicy chicken and shrimp, vegetables",22
+Lion's Head Meatballs,https://www.simplyrecipes.com/thmb/yNzCPKDR-AauH5PuX4zilhtT2KY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Lions-Head-Meatball-LEAD-03-0b670f6863104897bc5588483c96fd48.jpg,12.00,"Pork meatballs, cabbage, ginger sauce",22
+Honey Walnut Shrimp,https://bellyfull.net/wp-content/uploads/2021/07/Honey-Walnut-Shrimp-blog-2.jpg,13.00,"Fried shrimp, creamy honey sauce, candied walnuts",22
+Moo Goo Gai Pan,https://iheartumami.com/wp-content/uploads/2021/08/Stir-Fried-Chicken-with-Mushrooms-in-a-wok-I-Heart-Umami-5.jpg,11.00,"Chicken, mushrooms, bamboo shoots, white sauce",22
+Beef with Bitter Melon,https://thewoksoflife.com/wp-content/uploads/2015/07/beef-with-bitter-melon-8.jpg,10.00,"Beef slices, bitter melon, black bean sauce",22
+Reuben Sandwich,https://cdn.apartmenttherapy.info/image/upload/v1639523069/k/Photo/Recipes/2021-12-Reuben-Sandwich/danielle-acken-the-kitchn-reuben-sandwich-2-cropped.jpg,10.50, "Corned beef, Swiss cheese, sauerkraut, rye bread, Russian dressing",23
+Biscuits and Gravy,https://t4.ftcdn.net/jpg/01/72/71/25/360_F_172712571_RNFzBBz7CU7BaKmWoZrnd08gUIO2XN9p.jpg,8.00, "Soft biscuits, creamy sausage gravy",23
+Deep Dish Pizza,https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/02ea0224-7316-406d-bb3d-5ed36e17a7b6/Derivates/85848d56-2911-4221-950f-b071d2d8fedf.jpg,14.00, "Thick crust pizza, cheese, tomato sauce, toppings",23
+Cobb Salad,https://www.herwholesomekitchen.com/wp-content/uploads/2021/02/cobbsaladrecipe-1.jpg,9.50, "Lettuce, chicken, avocado, bacon, blue cheese, egg",23
+Jambalaya,https://media.istockphoto.com/id/537314539/photo/spicy-homemade-cajun-jambalaya.jpg?s=612x612&w=0&k=20&c=pYEoXeQ5fJ4Mzqw9wUFxAEHOd7dBSw95lNV4mtf_uaY=,12.00, "Rice, chicken, shrimp, sausage, Creole seasoning",23
+Kanafeh,https://i.pinimg.com/736x/5c/52/e4/5c52e4cd9822a681bdd8f2e619c4094d.jpg,7.00, "Sweet cheese pastry, syrup, pistachios",24
+Sfiha,https://media.istockphoto.com/id/1315080317/it/foto/sfiha-di-carne-araba-sul-tavolo.jpg?s=612x612&w=0&k=20&c=e02-jwkfcztZNvJBftrg9AgaM0qrtEhDZGhAa3VTXFk=,8.50, "Open-faced meat pies, tomatoes, spices",24
+Harira,https://ilvasodipandoro.com/wp-content/uploads/2021/04/harira-zuppa-marocchina-ramadan.jpg,9.00, "Tomato soup, lentils, chickpeas, herbs",24
+Fatayer,https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Fatayer.jpg/1200px-Fatayer.jpg,7.00, "Spinach or meat stuffed pastries",24
+Kibbeh Nayeh,https://thelebaneseplate.com/product_images/uploaded_images/kibbe-20200921-0000.jpg,12.00, "Raw minced meat, bulgur, spices",24
+Tortellini in Brodo,https://www.giallozafferano.it/images/231-23110/Tortellini-in-brodo_650x433_wm.jpg,11.00,"Mea,illed tortellini, clear broth",25
+Cotoletta alla Milanese,https://upload.wikimedia.org/wikipedia/commons/2/2b/Cotoletta_alla_milanese.jpg,15.00,"Breaded veal cutlet, fried",25
+Insalata di Mare,https://www.giallozafferano.it/images/211-21160/Insalata-di-mare_650x433_wm.jpg,13.00,"Seafood salad, lemon, olive oil",25
+Zuppa di Cozze,https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2022/03/Zuppa-di-cozze-foto-finale.jpg,12.00,"Mussels, garlic, tomato broth",25
+Panzotti al Pesto,https://www.aiafood.com/sites/default/files/styles/scale_1200/public/paragraph/images/pansoti_pesto.jpg?itok=plz7yX1t,14.00,"Stuffed pasta, pesto sauce",25
+Ika Yaki,https://thumbs.dreamstime.com/b/grilled-ika-yaki-fresh-squid-grill-sliced-rings-tentacles-white-background-fresh-squid-grill-sliced-rings-157124874.jpg,9.00, "Grilled squid, soy sauce",26
+Hijiki Salad,https://www.justonecookbook.com/wp-content/uploads/2020/05/Hijiki-Seaweed-Salad-6692-II.jpg,7.00, "Seaweed, soybeans, carrots, sesame dressing",26
+Tsukemono,https://media.istockphoto.com/id/1226105584/it/foto/cibo-giapponese-verdure-sale-sottaceto-tsukemono.jpg?s=612x612&w=0&k=20&c=-q-DQyldMf1QcjNl_vho4ES8sQ-WZUFG_XZAkOTIfGQ=,5.00, "Assorted Japanese pickles",26
+Kani Salad,https://littlesunnykitchen.com/wp-content/uploads/Kani-Salad-12.jpg,8.00, "Crab meat, mayonnaise, cucumber, caviar",26
+Yakisoba,https://media.istockphoto.com/id/1313734596/it/foto/noodles-yakisoba-piatto-yakisoba-con-carne-pollo-e-verdure.jpg?s=170667a&w=0&k=20&c=UqhKMigOZ0JHWfyaR6PCoWMZZ5YG_WVly1mI_ET3cok=,10.00, "Fried noodles, pork, vegetables, soy sauce",26
+Gemista,https://primochef.it/wp-content/uploads/2022/03/SH_gemista.jpg,9.00, "Stuffed tomatoes and peppers, rice, herbs",27
+Moussakas,https://t3.ftcdn.net/jpg/06/31/65/34/360_F_631653440_cgeEqgvlJZDdUWHPYAsmiuzrI2qKEoca.jpg,13.00, "Layered eggplant, minced meat, béchamel sauce",27
+Octopus Grilliato,https://www.misya.info/wp-content/uploads/2020/06/polpo-alla-griglia.jpg,14.00, "Grilled octopus, olive oil, oregano",27
+Saganaki,https://as2.ftcdn.net/v2/jpg/03/26/49/73/1000_F_326497316_Xw9s3kxglTTL6G1HwEnos9B5pdzcYuow.jpg,8.00, "Fried cheese, lemon juice",27
+Ellinikos,https://www.mygreekdish.com/wp-content/uploads/2018/11/Greek-coffee-Ellinikos-Kafes-recipe-How-to-make-Greek-coffee-scaled.jpg,4.50, "Greek coffee",27
+Vegan Stuffed Bell Peppers,https://www.aheadofthyme.com/wp-content/uploads/2018/07/vegan-stuffed-peppers.jpg,10.00, "Bell peppers, quinoa, black beans, corn, spices",28
+Vegan Ratatouille,https://nutriciously.com/wp-content/uploads/Tian-Ratatouille-by-Nutriciously-4-720x720.jpg.webp,11.00, "Zucchini, eggplant, bell peppers, tomato sauce",28
+Vegan Paella,https://www.shutterstock.com/image-photo/traditional-middle-east-kefta-kofta-260nw-1637096575.jpg,12.00, "Rice, saffron, mixed vegetables, artichokes, peas",28
+Vegan Goulash,https://thepeskyvegan.com/wp-content/uploads/2021/10/vegan-goulash-meat-free-feature.jpg,10.50, "Meat substitute, potatoes, carrots, paprika, tomatoes",28
+Vegan Bao Buns,https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2017/03/vegan-bao-buns-single-800x1200.jpg,9.00, "Steamed buns, mushroom filling, hoisin sauce",28
+Gnocchi alla Sorrentina,https://www.giallozafferano.it/images/ricette/197/19745/foto_hd/hd650x433_wm.jpg,12.50,"Potato gnocchi, tomato sauce, mozzarella, basil",29
+Risotto alla Pescatora,https://cdn.cook.stbm.it/thumbnails/ricette/25/25947/hd750x421.jpg,15.00,"Risotto, mixed seafood, tomato sauce, garlic",29
+Spaghetti alle Vongole,https://www.giallozafferano.it/images/219-21925/Spaghetti-alle-vongole_650x433_wm.jpg,14.00,"Spaghetti, clams, white wine sauce, garlic",29
+Orecchiette con Cime di Rapa,https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/01/Orecchiette-con-cime-di-rapa-3139.jpg,13.00,"Orecchiette pasta, broccoli rabe, anchovies, garlic",29
+Braciola,https://www.cucchiaio.it/content/cucchiaio/it/ricette/2015/06/braciola-di-maiale-alla-griglia/jcr:content/header-par/image-single.img10.jpg/1435055714641.jpg,16.00,"Rolled meat filled with cheese and herbs, tomato sauce",29
