@@ -18,17 +18,20 @@ class OrdersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 1; $i < 9; $i++) {
+
+            $meal = Meal::where('restaurant_id', $i)->first();
 
             $order = new Order();
-            $order->price_tot = mt_rand(1, 40);
-            $order->customer_name = $faker->sentence(1);
-            $order->customer_address = $faker->sentence(3);
+
+            $order->customer_name = $faker->firstName() . ' ' . $faker->lastName();
+            $order->customer_address = $faker->streetAddress();
             $order->customer_phone = $faker->phoneNumber();
             $order->status = $faker->boolean();
-            $meal_id = Meal::where('restaurant_id', $i)->first();
+            $order->price_tot = $meal->price;
+            $order->note = $faker->realText($maxNbChars = 100, $indexSize = rand(1,2));
             $order->save();
-            $order->meals()->attach($meal_id, ['quantity' => rand(1,3)]);
+            $order->meals()->attach($meal->id, ['quantity' => 1]);
         }
     }
 }
