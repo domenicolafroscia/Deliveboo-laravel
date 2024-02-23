@@ -3,6 +3,7 @@
 @section('content')
 <a class="btn btn-warning my-3" style="color: white" href="{{ route('admin.orders.index') }}"><i class="fa-solid fa-arrow-rotate-left"></i> Go Back</a>
     <div class="container">
+        @if (count($orders)>0)
         <h2 class="text-center py-3">Your Orders</h2>
 
         <table class="table table-striped my-5">
@@ -34,5 +35,9 @@
                     @endforeach
             </tbody>
         </table>
+            
+        @else
+            <h2 class="alert alert-warning text-center mt-3">Your orders are empty!</h2>
+        @endif
     </div>
 @endsection
