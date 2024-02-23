@@ -22,6 +22,10 @@ class RestaurantController extends Controller
     public function index()
     {
         $restaurant = Auth::user()->restaurant;
+        if($restaurant->user_id !== Auth::user()->id) {
+            abort(404);
+        }
+        
         if ($restaurant) {
             $meals = Meal::where('restaurant_id', $restaurant->id)->get();
             return view('admin.restaurants.index', compact('restaurant', 'meals'));
@@ -79,9 +83,11 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Restaurant $restaurant)
     {
-        //
+        if($restaurant->user_id !== Auth::user()->id) {
+            abort(404);
+        }
     }
 
     /**
