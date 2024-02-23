@@ -21,12 +21,9 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        if(isset(Auth::user()->restaurant)) {
+        if(Auth::user()->restaurant) {
             $restaurant = Auth::user()->restaurant;
-            if($restaurant->user_id !== Auth::user()->id) {
-                abort(404);
-            }
-            $meals = Meal::where('restaurant_id', $restaurant->id)->get();
+            $meals = $restaurant->meals;
             return view('admin.restaurants.index', compact('restaurant', 'meals'));
         } else {
             return redirect()->route('admin.restaurants.create');
@@ -40,6 +37,9 @@ class RestaurantController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->restaurant) {
+            return redirect()->route('admin.restaurants.index');
+        }
         $categories = Category::all();
         return view('admin.restaurants.create', compact('categories'));
     }
@@ -52,11 +52,6 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-        $restaurant = Auth::user()->restaurant;
-        if ($restaurant) {
-            return redirect()->route('admin.restaurants.index');
-        }
-
         $form_data = $request->validated();
         $new_restaurant = new Restaurant();
         $new_restaurant->fill($form_data);
@@ -84,13 +79,6 @@ class RestaurantController extends Controller
      */
     public function show()
     {
-        // if(Auth::user()->restaurant) {
-        //     if($restaurant->user_id !== Auth::user()->id) {
-        //         abort(404);
-        //     }
-        // } else {
-        //    return redirect()->route('admin.restaurants.create');
-        // }
         return abort(404);
     }
 
@@ -114,10 +102,8 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRestaurantRequest $request)
+    public function update(UpdateRestaurantRequest $request, Restaurant $restaurant)
     {
-        $restaurant = Auth::user()->restaurant;
-
         $form_data = $request->validated(); 
 
         if($request->hasFile('image')) {
@@ -148,6 +134,6 @@ class RestaurantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return abort(404);
     }
 }

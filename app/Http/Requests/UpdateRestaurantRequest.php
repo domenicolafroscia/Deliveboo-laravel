@@ -25,11 +25,10 @@ class UpdateRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required', 'min:3', 'max:120', Rule::unique('restaurants')->ignore($this->restaurant), 
             'email' => 'required', 'email', Rule::unique('restaurants')->ignore($this->restaurant),
             'phone' => 'required|max:15',
             'address' => 'required',
-            'p_iva' => 'required', 'min:11', 'max:11', Rule::unique('restaurants')->ignore($this->restaurant),
+            'image' => ['nullable', 'image', 'max:5000', 'mimes:jpeg,jpg,png,gif,webp'],
             'categories' => ['exists:categories,id', 'required']
         ];
     }
