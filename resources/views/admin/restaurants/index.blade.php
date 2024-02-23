@@ -58,6 +58,8 @@
             </h2>
         @endif
 
+
         @include('partials.delete_modal')
+        <a class="btn btn-warning" href="{{route('admin.restaurants.edit', ['restaurant' => $restaurant->slug])}}">Modify Restaurant data</a>
     </div>
 @endsection
