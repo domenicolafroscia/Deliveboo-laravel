@@ -82,15 +82,16 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurant $restaurant)
+    public function show()
     {
-        if(Auth::user()->restaurant) {
-            if($restaurant->user_id !== Auth::user()->id) {
-                abort(404);
-            }
-        } else {
-           return redirect()->route('admin.restaurants.create');
-        }
+        // if(Auth::user()->restaurant) {
+        //     if($restaurant->user_id !== Auth::user()->id) {
+        //         abort(404);
+        //     }
+        // } else {
+        //    return redirect()->route('admin.restaurants.create');
+        // }
+        return abort(404);
     }
 
     /**
