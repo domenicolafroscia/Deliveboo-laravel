@@ -13,14 +13,23 @@ class RestaurantController extends Controller
         $restaurantsQuery = Restaurant::with('categories');
         if ($request->has('category_id')) {
             $category_ids = $request->category_id;
-            $restaurantsQuery->whereHas('categories', fn($query) => $query->whereIn('id', $category_ids));
+            foreach($category_ids as $category_id) {
+                $restaurantsQuery->whereHas('categories', fn($query) => $query->where('id', $category_id));
+            }
         }
         $restaurants = $restaurantsQuery->paginate(10);
 
-        return response()->json([
-            'results' => $restaurants,
-            'success' => true
-        ]);
+        if($restaurants) {
+            return response()->json([
+                'results' => $restaurants,
+                'success' => true
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'No restaurant found'
+            ]);
+        }
     }
 
     public function show(string $slug)
