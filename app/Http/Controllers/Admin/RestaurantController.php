@@ -21,17 +21,16 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurant = Auth::user()->restaurant;
-        if($restaurant->user_id !== Auth::user()->id) {
-            abort(404);
-        }
-        
-        if ($restaurant) {
+        if(isset(Auth::user()->restaurant)) {
+            $restaurant = Auth::user()->restaurant;
+            if($restaurant->user_id !== Auth::user()->id) {
+                abort(404);
+            }
             $meals = Meal::where('restaurant_id', $restaurant->id)->get();
             return view('admin.restaurants.index', compact('restaurant', 'meals'));
         } else {
             return redirect()->route('admin.restaurants.create');
-        }
+        }      
     }
 
     /**
@@ -85,8 +84,12 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        if($restaurant->user_id !== Auth::user()->id) {
-            abort(404);
+        if(Auth::user()->restaurant) {
+            if($restaurant->user_id !== Auth::user()->id) {
+                abort(404);
+            }
+        } else {
+           return redirect()->route('admin.restaurants.create');
         }
     }
 
