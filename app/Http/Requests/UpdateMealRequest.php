@@ -28,7 +28,7 @@ class UpdateMealRequest extends FormRequest
         return [
             'name' => ['required', 'min:2', 'max:120',Rule::unique('meals')->ignore($this->meal)->where('restaurant_id',Auth::user()->id) ],
             'price' => ['required', 'min:0.01', 'max:999.99'],
-            'image' => ['nullable', 'image', 'max:512', 'mimes:jpeg,jpg,png,gif'],
+            'image' => ['nullable', 'image', 'max:5000', 'mimes:jpeg,jpg,png,gif,webp'],
             'description' => ['required', 'max:2000'],
             'is_active' => ['required']
         ];
