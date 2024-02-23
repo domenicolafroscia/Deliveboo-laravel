@@ -11,6 +11,12 @@ class RestaurantController extends Controller
     public function index(Request $request)
     {
         $restaurantsQuery = Restaurant::with('categories');
+
+        if($request->has('search')) {
+            $search_text = $request->search;
+            $restaurantsQuery->where('name', 'LIKE', $search_text . '%');
+        }
+
         if ($request->has('category_id')) {
             $category_ids = $request->category_id;
             foreach($category_ids as $category_id) {
@@ -48,4 +54,5 @@ class RestaurantController extends Controller
             ]);
         }
     }
+
 }
