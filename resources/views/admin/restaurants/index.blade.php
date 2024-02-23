@@ -58,5 +58,7 @@
             </h2>
         @endif
 
+    <a class="btn btn-warning" href="{{route('admin.restaurants.edit', ['restaurant' => $restaurant->slug])}}">Modify Restaurant data</a>
+
     </div>
 @endsection
