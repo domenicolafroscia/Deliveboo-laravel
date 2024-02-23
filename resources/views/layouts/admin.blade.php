@@ -63,6 +63,7 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
+                            @if (isset(Auth::user()->restaurant))
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.restaurants.index') }}">
@@ -88,6 +89,15 @@
                                     <i class="fa-solid fa-pen-to-square fa-lg fa-fw"></i> Orders
                                 </a>
                             </li>
+                            @else
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.restaurants.create') }}">
+                                    <i class="fa-solid fa-plus"></i> New Restaurant
+                                </a>
+                            </li>
+                            @endif
+                            
                         </ul>
 
 
