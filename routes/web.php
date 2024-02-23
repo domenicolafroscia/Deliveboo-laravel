@@ -34,7 +34,7 @@ Route::middleware(['auth','verified'])
 ->group(function(){
     //PUT HERE ALL THE ROUTE FOR THE CRUD
     Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('restaurants', RestaurantController::class);
+    Route::resource('restaurants', RestaurantController::class)->parameters(['restaurants' => 'restaurant:slug']);
     Route::resource('meals', MealController::class)->parameters(['meals' => 'meal:slug']);
     Route::get('trash', [TrashController::class, 'index'])->name('trash.index');
     Route::put('restore/{id}', [TrashController::class, 'restore'])->name('trash.restore');
