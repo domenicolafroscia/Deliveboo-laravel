@@ -15,8 +15,8 @@ class OrderController extends Controller
         $form_data = $request->validated();
 
                     // check id meals for price and restaurant
-
-                    // $meals_id = $form_data->cart->pluck('meal_id');
+                    //   $collection = collect($response->json())
+                    // $meals_id = $collection->cart->pluck('meal_id');
                     // $meals = Meal::whereIn('id', $meals_id)->get();
                     // $price_order_tot = 0;
                     // foreach($meals as $meal) {

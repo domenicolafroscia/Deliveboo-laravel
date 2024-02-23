@@ -18,11 +18,18 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function show(string $slug) {
-        $restaurants = Category::with('restaurants')->where('slug', $slug)->get();
-        return response()->json([
-            'results' => $restaurants,
-            'success' => true
-        ]);
+    public function show($id) {
+        $restaurants = Category::with('restaurants')->where('id', $id)->first();
+        if($restaurants) {
+            return response()->json([
+                'results' => $restaurants,
+                'success' => true
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'This category doesn\'t exists'
+            ]);
+        }
     }
 }
