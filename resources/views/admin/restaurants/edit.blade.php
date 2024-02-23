@@ -11,15 +11,6 @@
     @method('PUT')
 
     <div class="mb-3 has-validation">
-        <label for="name" class="form-label">Name Restaurant</label>
-        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-            value="{{ old('name', $restaurant->name) }}" required minlength="3" maxlength="120">
-        @error('name')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3 has-validation">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
             value="{{ old('email', $restaurant->email) }}" required>
@@ -42,15 +33,6 @@
         <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address"
             value="{{ old('address', $restaurant->address) }}" required>
         @error('address')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3 has-validation">
-        <label for="p_iva" class="form-label">P.Iva</label>
-        <input type="text" class="form-control @error('p_iva') is-invalid @enderror" id="p_iva" name="p_iva"
-            value="{{ old('p_iva', $restaurant->p_iva) }}" required minlength="11" maxlength="11">
-        @error('p_iva')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
