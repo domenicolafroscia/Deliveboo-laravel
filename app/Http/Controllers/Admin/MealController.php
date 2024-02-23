@@ -59,7 +59,7 @@ class MealController extends Controller
         }   */
         // Save the meal into db
         $meal = new Meal();
-        $restaurant = Restaurant::where('user_id',Auth::user()->id)->first();
+        $restaurant = Auth::user()->restaurant;
 
         $meal->slug = Str::slug($form_data["name"] . "-" . $restaurant->name);
         $meal->fill($form_data);
@@ -69,7 +69,7 @@ class MealController extends Controller
             $meal->image = $path;
         }
 
-        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        // $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         $meal->restaurant_id = $restaurant->id;
 
         $meal->save();
