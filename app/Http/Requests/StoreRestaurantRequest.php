@@ -26,8 +26,9 @@ class StoreRestaurantRequest extends FormRequest
         return [
             'name' => 'required|min:3|max:120|unique:restaurants,name',
             'email' => 'required|email|unique:restaurants,email',
-            'phone' => 'required|max:24',
-            'address' => 'required',
+            'phone' => 'required|max:24|min:10',
+            'address' => 'required|min:4',
+            'image' => ['nullable', 'image', 'max:5000', 'mimes:jpeg,jpg,png,gif,webp'],
             'p_iva' => 'required|min:11|max:11|unique:restaurants,p_iva',
             'categories' => ['exists:categories,id', 'required']
         ];
