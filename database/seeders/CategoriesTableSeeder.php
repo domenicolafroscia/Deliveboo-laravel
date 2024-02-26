@@ -16,13 +16,23 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = ['Pizzeria', 'Japanese', 'Greek', 'Vegan', 'Italian', 'Chinese', 'Fast Food', 'Kebab'];
-
+        $categories = [
+            ['name'=>'Pizzeria', 'image' =>'pizzeria.jpg'], 
+            ['name' => 'Japanese',  'image' =>'japanese.jpg'],
+            ['name' => 'Greek',  'image' =>'greek.jpg'],
+            ['name' => 'Vegan',  'image' =>'vegan.jpg'],
+            ['name' => 'Italian',  'image' =>'italian.jpg'],
+            ['name' => 'Chinese',  'image' =>'chinese.jpg'],
+            ['name' => 'Fast Food',  'image' =>'fast-food.jpg'],
+            ['name' => 'Kebab',  'image' =>'kebab.jpg'],
+         ];
+       
         foreach ($categories as $category) {
             $newCategory = new Category();
-            $newCategory->name = $category;
+            $newCategory->name = $category['name'];
+            $newCategory->image = $category['image'];
             $newCategory->slug = Str::slug($newCategory->name);
-
+           
             $newCategory->save();
 
         }
