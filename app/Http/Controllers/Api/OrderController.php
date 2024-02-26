@@ -23,8 +23,15 @@ class OrderController extends Controller
 
     public function makePayment(Request $request, Gateway $gateway)
     {
+        $amount = 0;
+        foreach($request->cart as $meal) {
+            for($i = 0; $i < $meal->quantity; $i++) {
+                $amount += Meal::find($meal->id)->price;
+            }
+        }
+
         $results = $gateway->transaction()->sale([
-            'amount' => $request->amount, //spesa totale fare controlli con id prodotti
+            'amount' => $amount, 
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true
@@ -36,6 +43,20 @@ class OrderController extends Controller
                 'results' => true,
                 'message' => 'Payment success'
             ]);
+
+            $order = new Order();
+            $order->price_tot = $amount;
+            $order->customer_name = $request->customer_name;
+            $order->customer_address = $request->customer_address;
+            $order->customer_phone = $request->customer_phone;
+            $order->status = 1;
+
+            $order->save();
+
+            foreach($request->cart as $meal) {
+                $order->meals()->attach($meal->id, ['quantity' => $meal->quantity]);
+                } 
+
         } else {
             return response()->json([
                 'results' => false,
@@ -44,32 +65,15 @@ class OrderController extends Controller
         }
     }
 
-    // public function store(StoreOrderRequest $request) {
-    //     $form_data = $request->validated();
+  
 
-    //                 // check id meals for price and restaurant
-    //                 //   $collection = collect($response->json())
-    //                 // $meals_id = $collection->cart->pluck('meal_id');
-    //                 // $meals = Meal::whereIn('id', $meals_id)->get();
-    //                 // $price_order_tot = 0;
-    //                 // foreach($meals as $meal) {
-    //                 //     $price_order_tot += $meal->price;
-    //                 // }
 
-    //                 // $restaurant = Restaurant::whereIn('id', $meals_id)->get();
-    //                 // if(count($restaurant > 1)) {
-    //                 //     return response()->json([
-    //                 //         'success' => false,
-    //                 //         'results' => 'Two different Restaurants'
-    //                 //     ]);
-    //                 // }
-
-    //     $order = new Order();
+    //     
     //     $order->fill($form_data);
 
 
     //     // $order->price_tot = $price_order_tot;
-    //     $order->save();
+    //     
 
     //     // foreach($form_data->cart as $item) {
     //     //     $order->meals()->attach($item->meals_id, ['quantity' => $item->quantity]);
