@@ -45,7 +45,7 @@
                                 <form class="d-inline-block" action="{{ route('admin.meals.destroy',['meal' => $meal->slug])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                    <button class="btn btn-danger btn-delete" type="submit" data-title="{{ $meal->name }}">Delete</button>
                                 </form>
 
                             </td>
@@ -58,5 +58,8 @@
             </h2>
         @endif
 
+
+        @include('partials.delete_modal')
+        <a class="btn btn-warning" href="{{route('admin.restaurants.edit', ['restaurant' => $restaurant->slug])}}">Modify Restaurant data</a>
     </div>
 @endsection

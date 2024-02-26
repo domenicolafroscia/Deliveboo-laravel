@@ -8,16 +8,38 @@ use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
 {
-    public function index() {
-        $restaurants = Restaurant::with('categories')->get();
-        
-        return response()->json([
-            'results' => $restaurants,
-            'success' => true
-        ]);
+    public function index(Request $request)
+    {
+        $restaurantsQuery = Restaurant::with('categories');
+
+        if($request->has('search')) {
+            $search_text = $request->search;
+            $restaurantsQuery->where('name', 'LIKE', $search_text . '%');
+        }
+
+        if ($request->has('category_id')) {
+            $category_ids = $request->category_id;
+            foreach($category_ids as $category_id) {
+                $restaurantsQuery->whereHas('categories', fn($query) => $query->where('id', $category_id));
+            }
+        }
+        $restaurants = $restaurantsQuery->paginate(10);
+
+        if($restaurants) {
+            return response()->json([
+                'results' => $restaurants,
+                'success' => true
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'No restaurant found'
+            ]);
+        }
     }
 
-    public function show(string $slug) {
+    public function show(string $slug)
+    {
         $restaurant = Restaurant::with('meals')->where('slug', $slug)->first();
 
         if ($restaurant) {
@@ -28,8 +50,9 @@ class RestaurantController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Nessun ristorante trovato'
+                'message' => 'No restaurant found'
             ]);
         }
     }
+
 }
