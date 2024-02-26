@@ -24,12 +24,11 @@ class StoreOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'price_tot' => 'required',
+            'token' => 'required',
+            'cart' => 'required',
             'customer_name' => 'required',
             'customer_address' => 'required',
             'customer_phone' => 'required',
-            'status' => 'required',
-            'cart' => 'required'
         ];
     }
 }
