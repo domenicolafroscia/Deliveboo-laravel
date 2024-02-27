@@ -29,11 +29,12 @@ class RestaurantsTableSeeder extends Seeder
                 $restaurant->phone = $row[2];
                 $restaurant->address = $row[3];
                 $restaurant->p_iva = $row[4];
-                $restaurant->user_id = $row[5];
+                $restaurant->image = $row[5];
+                $restaurant->user_id = $row[6];
                 //dd($restaurant);
 
                 $restaurant->save();
-                $restaurant->categories()->attach($row[6]);
+                $restaurant->categories()->attach($row[7]);
                 
            }
         } 
