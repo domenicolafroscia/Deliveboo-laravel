@@ -1,30 +1,30 @@
-name,email,phone,address,p_iva,user_id,categories
-Roero e figli Ristorante,antonuccidina@zito.it,+39 6767 25783345,"Piazza Michela 49",51193536149,1,1
-"Schicchi, Pistoletto e Cabrini SPA Ristorante",vittoria09@giradello.it,+39 029 0546695,"Vicolo Antonello 484 Appartamento 03",75100976877,2,2
-"Fibonacci, Carullo e Spallanzani Group Ristorante",gilberto44@berengario-caboto.eu,+39 857 57 91 7746,"Borgo Antonella 5 Appartamento 81",52088473807,3,3
-"Bevilacqua, Alonzi e Barbarigo SPA Ristorante",grisoniflavia@alonzi.it,+39 512 16 51 5616,"Rotonda Flavio 69",07725881807,4,4
-"Mantegna, Tonisto e Balotelli s.r.l. Ristorante",amaccanelli@zamorani.it,+39 8873 9534181,"Vicolo Luciana 447 Appartamento 70",44831995959,5,5
-"Tremonti, Florio e Balbi e figli Ristorante",vverga@salvo.org,+39 810 65 09 6471,"Incrocio Tremonti 398 Appartamento 63",09976696929,6,6
-Cuomo-Boccioni s.r.l. Ristorante,adriano10@manunta.it,+39 3228 7273106,"Canale Ottino 094 Piano 0",02703813257,7,7
-Borromini-Cutuli SPA Ristorante,vincentiogiulietti@canetta-aulenti.it,+39 74 67983035,"Borgo Manuel 05",77496494480,8,8
-Gilardoni s.r.l. Ristorante,liliana97@vianello.com,+39 17 65147359,"Piazza Carmelo 158 Appartamento 97",09728937699,9,1
-"Eco, Speri e Natta Group Ristorante",babbolando@cuzzocrea.eu,+39 31 9936773,"Incrocio Antonina 4",68383828938,10,3
-"Bosio, Turci e Tasca SPA Ristorante",mocciaflavia@endrizzi.it,+39 8265 3408712,"Via Bulzoni 8",07252394263,11,2
-Trentin-Monduzzi Group Ristorante,beatrice46@ramazzotti-ferrucci.it,+39 24 4564982,"Stretto Vianello 62 Appartamento 15",52243759255,12,5,
-Totino-Fermi Group Ristorante,augusto77@zanzi.com,+39 047 3902240,"Vicolo Camicione 18",13379657182,13,7
-Vitturi-Mazzacurati SPA Ristorante,pina65@pugliese-colletti.it,+39 949 58 21 5177,"Piazza Morricone 2",70975944693,14,1
-Santorio-Rossetti Group Ristorante,cassandra68@iannuzzi-cicilia.it,+39 10 8491386,"Contrada Gioele 474",48567572622,15,2
-Viola Group Ristorante,baraccasante@liguori-opizzi.com,+39 550 52903823,"Via Cesare 373",12223626555,16,3
-"Nugnes, Bompiani e Rensi e figli Ristorante",ottaviomodiano@petralli.net,+39 5324 3975139,"Piazza Francesca 244",11963257880,17,4
-Pugliese-Balotelli Group Ristorante,greggiobenvenuto@trincavelli.it,+39 517 78 83 5881,"Rotonda Giusti 26 Piano 1",03705417704,18,5
-Lancisi SPA Ristorante,pinamortati@crisafulli.net,+39 6366 83568158,"Via Respighi 332 Appartamento 00",44054596236,19,7
-Antonioni-Farnese s.r.l. Ristorante,victoria22@castelli.it,+39 52 88212327,"Strada Alessandra 50",69985842535,20,8
-Salieri-Rismondo s.r.l. Ristorante,atenulfnaccari@sandi.org,+39 25 77254566,"Viale Paride 65 Appartamento 74",65130615075,21,2
-"Riccardi, Zacco e Rossetti SPA Ristorante",ugabbana@antonello-romano.com,+39 1759 43335605,"Viale Monteverdi 5 Piano 6",31379003079,22,5
-Battelli SPA Ristorante,luigiiannuzzi@buonauro-salandra.eu,+39 2855 9616630,"Viale Ermanno 4",33298193012,23,2
-Cuomo SPA Ristorante,amico86@briccialdi.com,+39 9986 02387941,"Borgo Benvenuto 127",25250970634,24,7
-"Volta, Storladi e Valguarnera Group Ristorante",ischiavone@tropea.com,+39 7725 3165303,"Canale Leonardo 757 Piano 7",27681654833,25,8
-Sabatini-Scalera e figli Ristorante,nrapisardi@casarin-baresi.net,+39 79 9321450,"Via Gian 87 Piano 5",56554751963,26,3
-"Coppola, Castelli e Zampa SPA Ristorante",bfranscini@beccaria-tremonti.org,+39 942 62 90 4229,"Canale Fattori 7 Appartamento 91",72971187277,27,4
-Garibaldi-Eco Group Ristorante,matteottibianca@alboni.com,+39 52 10701723,"Incrocio Comencini 170 Piano 0",03810349039,28,6
-Marini-Bosio Group Ristorante,michela69@salvo.it,+39 96 5776060,"Via Cainero 886 Piano 6",06222092282,29,7
+name,email,phone,address,p_iva,image,user_id,categories
+Roero e figli Ristorante,antonuccidina@zito.it,+39 6767 25783345,"Piazza Michela 49",51193536149,https://s1.1zoom.me/prev/500/499725.jpg,1,1
+"Schicchi, Pistoletto e Cabrini SPA Ristorante",vittoria09@giradello.it,+39 029 0546695,"Vicolo Antonello 484 Appartamento 03",75100976877,https://img.freepik.com/free-photo/fresh-seafood-meal-sashimi-rice-appetizer-generative-ai_188544-12175.jpg?size=626&ext=jpg&ga=GA1.1.1395880969.1708992000&semt=ais,2,2
+"Fibonacci, Carullo e Spallanzani Group Ristorante",gilberto44@berengario-caboto.eu,+39 857 57 91 7746,"Borgo Antonella 5 Appartamento 81",52088473807,https://media.istockphoto.com/id/950253138/photo/middle-eastern-arabic-or-mediterranean-dinner-table-with-grilled-lamb-kebab-chicken-skewers.jpg?s=612x612&w=0&k=20&c=nrK1Tsv9btEJZpSwzlkyL5dc4O1xqR0v18fh5oWbP3A=,3,3
+"Bevilacqua, Alonzi e Barbarigo SPA Ristorante",grisoniflavia@alonzi.it,+39 512 16 51 5616,"Rotonda Flavio 69",07725881807,https://img.freepik.com/premium-photo/healthy-vegetarian-salad-with-chickpeas-quinoa-cucumber-radish-avocado_199073-555.jpg,4,4
+"Mantegna, Tonisto e Balotelli s.r.l. Ristorante",amaccanelli@zamorani.it,+39 8873 9534181,"Vicolo Luciana 447 Appartamento 70",44831995959,https://t3.ftcdn.net/jpg/01/10/88/00/360_F_110880055_M33EaXgmhibNtdp1EvPKN1SpsOGOQqKd.jpg,5,5
+"Tremonti, Florio e Balbi e figli Ristorante",vverga@salvo.org,+39 810 65 09 6471,"Incrocio Tremonti 398 Appartamento 63",09976696929,https://img.freepik.com/free-photo/top-view-delicious-noodles-concept_23-2148773775.jpg,6,6
+Cuomo-Boccioni s.r.l. Ristorante,adriano10@manunta.it,+39 3228 7273106,"Canale Ottino 094 Piano 0",02703813257,https://img.freepik.com/free-photo/grilled-beef-burger-with-fries-cheese-tomato-generative-ai_188544-8466.jpg,7,7
+Borromini-Cutuli SPA Ristorante,vincentiogiulietti@canetta-aulenti.it,+39 74 67983035,"Borgo Manuel 05",77496494480,https://img.freepik.com/premium-photo/big-shawarma-kebab-fried-fire-street-food-sandwich-gyro-fresh-roll-lavash-pita-bread-chicken-beef-shawarma-3d-illustration_86390-9693.jpg,8,8
+Gilardoni s.r.l. Ristorante,liliana97@vianello.com,+39 17 65147359,"Piazza Carmelo 158 Appartamento 97",09728937699,https://media.istockphoto.com/id/1414765256/it/foto/pizza-cotta-tagliata-su-un-piatto.jpg?s=612x612&w=0&k=20&c=-lLENMPZP9xhdffPTiWGJT1NYtrhU5oXaZrOsuQezWM=,9,1
+"Eco, Speri e Natta Group Ristorante",babbolando@cuzzocrea.eu,+39 31 9936773,"Incrocio Antonina 4",68383828938,https://img.freepik.com/premium-photo/assorted-greek-dishes-rustic-wooden-background-from-moussaka-grilled-fish-souvlaki-greek-salad-steamed-mussels-with-herbs-appetizers-greece-from_92134-2560.jpg,10,3
+"Bosio, Turci e Tasca SPA Ristorante",mocciaflavia@endrizzi.it,+39 8265 3408712,"Via Bulzoni 8",07252394263,https://media.istockphoto.com/id/511793034/photo/japanese-ramen-soup-with-chicken-egg-chives-and-sprout.jpg?s=612x612&w=0&k=20&c=F4BTbDq2-F63o1Z9nBR42NANldJ6fTRJWqqeqpoh5nE=,11,2
+Trentin-Monduzzi Group Ristorante,beatrice46@ramazzotti-ferrucci.it,+39 24 4564982,"Stretto Vianello 62 Appartamento 15",52243759255,https://media.istockphoto.com/id/669580130/photo/risotto-with-porcini-mushrooms.jpg?s=612x612&w=0&k=20&c=3FjWZ1MQECAaiaFST4r7nqotf3oLZIMK8PLM4jDy1Io=,12,5,
+Totino-Fermi Group Ristorante,augusto77@zanzi.com,+39 047 3902240,"Vicolo Camicione 18",13379657182,https://media.istockphoto.com/id/1154731746/photo/cheeseburger-with-cola-and-french-fries.jpg?b=1&s=612x612&w=0&k=20&c=oCU1xnP8ntsiIIVf7CQ6WjfE45Y9pF-A_9D1_omG_Rg=,13,7
+Vitturi-Mazzacurati SPA Ristorante,pina65@pugliese-colletti.it,+39 949 58 21 5177,"Piazza Morricone 2",70975944693,https://media.istockphoto.com/id/1198079266/photo/deluxe-pizza-with-pepperoni-sausage-mushrooms-and-peppers.webp?b=1&s=170667a&w=0&k=20&c=Jmt_A91qLtE2YIDbBxYdqaCJ397haq0ZzWPHLlhtQw0=,14,1
+Santorio-Rossetti Group Ristorante,cassandra68@iannuzzi-cicilia.it,+39 10 8491386,"Contrada Gioele 474",48567572622,https://media.istockphoto.com/id/1442374640/it/foto/tonkatsu-di-cibo-giapponese-su-un-piatto.jpg?s=612x612&w=0&k=20&c=XQ-eBwJiHTgTyv54Jkupg1LWgpZyft4ynkZkvcg_n70=,15,2
+Viola Group Ristorante,baraccasante@liguori-opizzi.com,+39 550 52903823,"Via Cesare 373",12223626555,https://cdn.openart.ai/stable_diffusion/bf3a42a84fb4fb0609461f7b8a16d0234ced8108_2000x2000.webp,16,3
+"Nugnes, Bompiani e Rensi e figli Ristorante",ottaviomodiano@petralli.net,+39 5324 3975139,"Piazza Francesca 244",11963257880,https://img.freepik.com/free-photo/farfalle-pasta-durum-wheat-with-baked-meatballs-chicken-fillet-tomato-sauce-salad-bowl_2829-11169.jpg,17,4
+Pugliese-Balotelli Group Ristorante,greggiobenvenuto@trincavelli.it,+39 517 78 83 5881,"Rotonda Giusti 26 Piano 1",03705417704,https://media.istockphoto.com/id/535851351/photo/lasagna-on-a-square-white-plate.jpg?s=612x612&w=0&k=20&c=Rg1K7z4NlWhy2qexaym_GJ0khcJFSJUJgToTN2cRspM=,18,5
+Lancisi SPA Ristorante,pinamortati@crisafulli.net,+39 6366 83568158,"Via Respighi 332 Appartamento 00",44054596236,https://img.freepik.com/premium-photo/fast-food-background-top-view-delicious-cheeseburgers-with-french-fries-fresh-vegetables_323015-5194.jpg,19,7
+Antonioni-Farnese s.r.l. Ristorante,victoria22@castelli.it,+39 52 88212327,"Strada Alessandra 50",69985842535,https://www.shutterstock.com/image-photo/delicious-doner-kebab-shaverma-wrap-260nw-2222058741.jpg,20,8
+Salieri-Rismondo s.r.l. Ristorante,atenulfnaccari@sandi.org,+39 25 77254566,"Viale Paride 65 Appartamento 74",65130615075,https://img.freepik.com/free-photo/fried-shrimp-squid-with-spicy-sauce_1150-35480.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1701302400&semt=ais,21,2
+"Riccardi, Zacco e Rossetti SPA Ristorante",ugabbana@antonello-romano.com,+39 1759 43335605,"Viale Monteverdi 5 Piano 6",31379003079,https://www.fattoincasadabenedetta.it/wp-content/uploads/2022/02/AdobeStock_296698970-min-min-scaled.jpeg,22,5
+Battelli SPA Ristorante,luigiiannuzzi@buonauro-salandra.eu,+39 2855 9616630,"Viale Ermanno 4",33298193012,https://www.pressurecookrecipes.com/wp-content/uploads/2021/05/oden-500x500.jpg,23,2
+Cuomo SPA Ristorante,amico86@briccialdi.com,+39 9986 02387941,"Borgo Benvenuto 127",25250970634,https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_640.jpg,24,7
+"Volta, Storladi e Valguarnera Group Ristorante",ischiavone@tropea.com,+39 7725 3165303,"Canale Leonardo 757 Piano 7",27681654833,https://media.istockphoto.com/id/501266025/it/foto/per-tradizione-i-seekh-kabab-5.jpg?s=612x612&w=0&k=20&c=eaZaKQwnmRbRYu7G2uIGK5hUMttwc1GVGEo3XpsxVpY=,25,8
+Sabatini-Scalera e figli Ristorante,nrapisardi@casarin-baresi.net,+39 79 9321450,"Via Gian 87 Piano 5",56554751963,https://media.istockphoto.com/id/1281386097/photo/souvlaki-grilled-meat-greek-salad-and-tzatziki-on-wooden-table.jpg?s=612x612&w=0&k=20&c=hmXp_vvfhYyTb58z6r2Oi4VguywabF7GqW385lHzQm4=,26,3
+"Coppola, Castelli e Zampa SPA Ristorante",bfranscini@beccaria-tremonti.org,+39 942 62 90 4229,"Canale Fattori 7 Appartamento 91",72971187277,https://www.shutterstock.com/image-photo/italian-new-year-dish-cotechino-600nw-2369482789.jpg,27,4
+Garibaldi-Eco Group Ristorante,matteottibianca@alboni.com,+39 52 10701723,"Incrocio Comencini 170 Piano 0",03810349039,https://media.istockphoto.com/id/483120255/photo/asian-oranage-chicken-with-green-onions.jpg?s=612x612&w=0&k=20&c=0T_g_J5OSnmCei1Slgr1128wzAhzceRvLjd94R3gkgs=,28,6
+Marini-Bosio Group Ristorante,michela69@salvo.it,+39 96 5776060,"Via Cainero 886 Piano 6",06222092282,https://img.freepik.com/free-photo/top-view-arrangement-with-food-wooden-background_23-2148308806.jpg,29,7
