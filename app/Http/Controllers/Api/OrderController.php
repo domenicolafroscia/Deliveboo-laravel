@@ -30,6 +30,13 @@ class OrderController extends Controller
             }
         }
 
+        if($request->amount != $amount) {
+            return response()->json([
+                'results' => false,
+                'message' => 'Error for amount'
+            ]);
+        }
+
         $results = $gateway->transaction()->sale([
             'amount' => $amount, 
             'paymentMethodNonce' => $request->token,
