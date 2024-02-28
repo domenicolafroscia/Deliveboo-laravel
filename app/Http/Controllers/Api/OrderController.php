@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreOrderRequest;
+use App\Http\Requests\OrderRequest;
 use App\Models\Meal;
 use App\Models\Order;
 use App\Models\Restaurant;
@@ -21,7 +21,7 @@ class OrderController extends Controller
         ]);
     }
 
-    public function makePayment(Request $request, Gateway $gateway)
+    public function makePayment(OrderRequest $request, Gateway $gateway)
     {
         $amount = 0;
         foreach($request->cart as $meal) {
