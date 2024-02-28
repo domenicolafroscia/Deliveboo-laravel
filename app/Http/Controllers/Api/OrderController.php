@@ -23,10 +23,10 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request, Gateway $gateway)
     {
-        $amount = 0;
+           $amount = 0;
         foreach($request->cart as $meal) {
-            for($i = 0; $i < $meal->quantity; $i++) {
-                $amount += Meal::find($meal->id)->price;
+            for($i = 0; $i < $meal["quantity"]; $i++) {
+                $amount += Meal::find($meal["id"])->price;
             }
         }
 
@@ -35,10 +35,10 @@ class OrderController extends Controller
                 'results' => false,
                 'message' => 'Error for amount'
             ]);
-        }
-
+        }  
+ 
         $results = $gateway->transaction()->sale([
-            'amount' => $amount, 
+            'amount' => $request->amount, 
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true
@@ -46,13 +46,8 @@ class OrderController extends Controller
         ]);
 
         if($results->success) {
-            return response()->json([
-                'results' => true,
-                'message' => 'Payment success'
-            ]);
-
             $order = new Order();
-            $order->price_tot = $amount;
+            $order->price_tot = $request->amount;
             $order->customer_name = $request->customer_name;
             $order->customer_address = $request->customer_address;
             $order->customer_phone = $request->customer_phone;
@@ -61,8 +56,14 @@ class OrderController extends Controller
             $order->save();
 
             foreach($request->cart as $meal) {
-                $order->meals()->attach($meal->id, ['quantity' => $meal->quantity]);
+                $order->meals()->attach($meal["id"], ['quantity' => $meal["quantity"]]);
                 } 
+
+            return response()->json([
+                'results' => true,
+                'message' => 'Payment success',
+                'cart' => $request->cart 
+                ]);
 
         } else {
             return response()->json([

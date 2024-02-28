@@ -29,6 +29,8 @@ class OrderRequest extends FormRequest
             'customer_name' => 'required',
             'customer_address' => 'required',
             'customer_phone' => 'required',
+            'amount'=> 'required'
+           
         ];
     }
 }
