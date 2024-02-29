@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Mail\CustomerMail;
+use App\Mail\RestaurantMail;
 use App\Models\Meal;
 use App\Models\Order;
 use App\Models\Restaurant;
@@ -66,6 +67,9 @@ class OrderController extends Controller
             $_meal_id = $order->meals()->first()->id;
             $restaurant = Restaurant::where('id', $_meal_id)->first();
             Mail::send(new CustomerMail($order, $restaurant));
+
+            //Restaurant mail
+            Mail::send(new RestaurantMail($order, $restaurant));
 
             return response()->json([
                 'results' => true,
