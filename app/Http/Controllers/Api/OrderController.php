@@ -26,57 +26,63 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request, Gateway $gateway)
     {
-           $amount = 0;
-        foreach($request->cart as $meal) {
-            for($i = 0; $i < $meal["quantity"]; $i++) {
+        $amount = 0;
+        foreach ($request->cart as $meal) {
+            for ($i = 0; $i < $meal["quantity"]; $i++) {
                 $amount += Meal::find($meal["id"])->price;
             }
         }
 
-        if($request->amount != $amount) {
+        if ($request->amount != $amount) {
             return response()->json([
                 'results' => false,
                 'message' => 'Error for amount'
             ]);
-        }  
- 
+        }
+
         $results = $gateway->transaction()->sale([
-            'amount' => $request->amount, 
+            'amount' => $request->amount,
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true
             ]
         ]);
 
-        if($results->success) {
+        if ($results->success) {
             $order = new Order();
             $order->price_tot = $request->amount;
             $order->customer_name = $request->customer_name;
             $order->customer_address = $request->customer_address;
             $order->customer_phone = $request->customer_phone;
-            $order->status = 1;
+            $order->customer_email = $request->customer_email;
+            $order->status = 1;       
+
+                       
 
             $order->save();
 
-            foreach($request->cart as $meal) {
+            foreach ($request->cart as $meal) {
                 $order->meals()->attach($meal["id"], ['quantity' => $meal["quantity"]]);
-                } 
+            }
+
             
+            
+          
+           
+            $_meal_id = $order->first()->id;
+            $_meal = Meal::where('id', $_meal_id)->first();
+            $restaurant = Restaurant::where('id', $_meal->restaurant_id)->first();
 
-            // Customer mail
-            $_meal_id = $order->meals()->first()->id;
-            $restaurant = Restaurant::where('id', $_meal_id)->first();
-            Mail::send(new CustomerMail($order, $restaurant));
+            //Customer mail
+            Mail::to($order->customer_email)->send(new CustomerMail($order, $restaurant));
 
-            //Restaurant mail
-            Mail::send(new RestaurantMail($order, $restaurant));
-
+            // // // //Restaurant mail
+            Mail::to($restaurant->email)->send(new RestaurantMail($order, $restaurant)); 
+            
             return response()->json([
                 'results' => true,
-                'message' => 'Payment success',
-                'cart' => $request->cart 
-                ]);
-
+                'message' => 'Payment success'
+            ]);
         } else {
             return response()->json([
                 'results' => false,
@@ -85,7 +91,7 @@ class OrderController extends Controller
         }
     }
 
-  
+
 
 
     //     

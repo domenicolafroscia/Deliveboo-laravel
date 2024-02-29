@@ -37,8 +37,8 @@ class CustomerMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address($this->restaurant->mail, $this->restaurant->name),
-            replyTo: new Address($this->order->customer_mail, $this->order->customer_name),
+            from: $this->restaurant->email, 
+            replyTo: $this->restaurant->email,
             subject: 'New Order',
         );
     }
