@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
+use App\Mail\CustomerMail;
+use App\Mail\RestaurantMail;
 use App\Models\Meal;
 use App\Models\Order;
 use App\Models\Restaurant;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -58,6 +61,15 @@ class OrderController extends Controller
             foreach($request->cart as $meal) {
                 $order->meals()->attach($meal["id"], ['quantity' => $meal["quantity"]]);
                 } 
+            
+
+            // Customer mail
+            $_meal_id = $order->meals()->first()->id;
+            $restaurant = Restaurant::where('id', $_meal_id)->first();
+            Mail::send(new CustomerMail($order, $restaurant));
+
+            //Restaurant mail
+            Mail::send(new RestaurantMail($order, $restaurant));
 
             return response()->json([
                 'results' => true,

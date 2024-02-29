@@ -10,7 +10,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['price_tot', 'customer_name', 'customer_address', 'customer_phone', 'status'];
+    protected $fillable = ['price_tot', 'customer_name', 'customer_address', 'customer_phone', 'status', 'customer_email'];
 
     public function meals() {
         return $this->belongsToMany(Meal::class)->withPivot('quantity');
