@@ -28,9 +28,9 @@ class AppServiceProvider extends ServiceProvider
             return new Gateway(
                 [
                     'environment' => 'sandbox',
-                    'merchantId' => '7vgbrmwvqp5dfsrg',
-                    'publicKey' => 'nyz8zh7dpy9pyfmh',
-                    'privateKey' => '82c8bdf932ba137c7a46a96aa2878dff'
+                    'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+                    'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+                    'privateKey' => env('BRAINTREE_PRIVATE_KEY')
                 ]);
         });
     }
