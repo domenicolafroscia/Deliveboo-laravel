@@ -1,2 +1,1 @@
-<h1>Prova ristorante</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio mollitia officiis facere cupiditate deleniti necessitatibus sit ea quae animi expedita! Aut quibusdam tempora sunt alias sint architecto, earum ratione quisquam.</p>
+<h1></h1>
