@@ -6,13 +6,13 @@ use App\Models\Order;
 use App\Models\Restaurant;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
-class CustomerMail extends Mailable
+class RestaurantMail extends Mailable
 {
     use Queueable, SerializesModels;
     public Order $order;
@@ -37,8 +37,8 @@ class CustomerMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address($this->restaurant->mail, $this->restaurant->name),
-            replyTo: new Address($this->order->customer_mail, $this->order->customer_name),
+            from: new Address('deliveboo@gmail.com', 'Deliveboo'),
+            replyTo: new Address($this->restaurant->email, $this->restaurant->name),
             subject: 'New Order',
         );
     }
@@ -51,7 +51,7 @@ class CustomerMail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'emails.customer-email',
+            view: 'emails.restaurant-email',
         );
     }
 
