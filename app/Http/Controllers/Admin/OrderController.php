@@ -32,7 +32,7 @@ class OrderController extends Controller
 
             if($request->select_order == 'asc') {
                 $ordersQuery->orderBy('created_at', 'asc');
-            } else if ($request->select_order == 'desc') {
+            } else {
                 $ordersQuery->orderBy('created_at', 'desc');
             }
 

@@ -16,8 +16,8 @@
                         <label for="filter-by-order" class="form-label">Filter by</label>
                         <select name="select_order" id="filter-by-order" class="form-select" aria-label="Default select example">
                             <option value="" selected>Choose one</option>
-                            <option value="asc">Asc</option>
-                            <option value="desc">Desc</option>
+                            <option value="asc">Oldest order</option>
+                            <option value="desc">Most recent order</option>
                         </select>
                     </div>
 
