@@ -7,7 +7,35 @@
         @if (count($meals) > 0)
             <h2 class="mt-3 text-center">All the meal want to delete</h2>
 
-            <table class="table table-striped my-5">
+            @foreach ($meals as $meal)
+            <div class="col-md-4">
+                <div class="dish-card">
+                    <img class="dish-image" src="{{$meal->image}}" alt="Dish 1">
+                    <div class="dish-details">
+                        <h3 class="dish-title">{{ $meal->name }}</h3>
+                        <p class="dish-description">{{$meal->description}}</p>
+                        <p class="dish-price">{{ $meal->price . "€" }}</p>
+                        <div class="actions">
+                            <form class="d-inline-block" action="{{ route('admin.trash.restore', ['id' => $meal->id]) }}"
+                                method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button class="btn btn-success" type="submit">Restore</button>
+                            </form>
+
+                            <form class="d-inline-block" action="{{ route('admin.trash.delete', ['id' => $meal->id]) }}"
+                                method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-delete" type="submit" data-title="{{ $meal->name }}">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+            {{-- <table class="table table-striped my-5">
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
@@ -36,7 +64,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-delete" type="submit" data-title="{{ $meal->name }}">Delete</button>
-                                </form>
+                                </form> --}}
                                 {{-- <a class="btn btn-success" href="{{ route('admin.trash.restore', ['id' => $meal->id]) }}">
                                 Restore
                             </a> --}}
@@ -44,11 +72,11 @@
                                 Delete
                             </a> --}}
 
-                            </td>
+                            {{-- </td>
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table> --}}
         @else
             <h2 class="alert alert-warning mt-3 text-center">The Trash is empty!</h2>
         @endif
@@ -57,3 +85,4 @@
     </div>
 
 @endsection
+
