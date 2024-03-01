@@ -12,29 +12,31 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
-        // $meals = Meal::where('restaurant_id', $restaurant->id)->get();
-        // $meal_id_arr = [];
-        // foreach($meals as $meal) {
-        //     array_push($meal_id_arr, $meal->id);
-        // }
-
-        // $meal_orders = DB::table('meal_order')->whereIn('meal_id', $meal_id_arr)->get();
-        // $order_id_arr = [];
-        // foreach($meal_orders as $meal_order) {
-        //     array_push($order_id_arr, $meal_order->order_id);
-        // }
         $restaurant = Auth::user()->restaurant;
         if ($restaurant) {
             $meal_id_arr = $restaurant->meals->pluck('id');
 
             $order_id_arr = DB::table('meal_order')->whereIn('meal_id', $meal_id_arr)->pluck('order_id');
 
-            $orders = Order::whereIn('id', $order_id_arr)->get();
+            $ordersQuery = Order::whereIn('id', $order_id_arr);
 
+            if(isset($request->start_date)) {
+                 $ordersQuery->whereDate('created_at', '>=', $request->start_date);
+             }
 
+             if(isset($request->end_date)) {
+                 $ordersQuery->whereDate('created_at', '<=', $request->end_date);
+             }
+
+            if($request->select_order == 'asc') {
+                $ordersQuery->orderBy('created_at', 'asc');
+            } else if ($request->select_order == 'desc') {
+                $ordersQuery->orderBy('created_at', 'desc');
+            }
+
+            $orders = $ordersQuery->get();
             return view('admin.orders.index', compact('orders'));
         } else {
             return redirect()->route('admin.restaurants.create');
