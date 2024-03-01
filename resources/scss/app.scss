@@ -1,5 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
 
+.not-found {
+    background-image: url('../../public/img/1484776-sorridente-uomo-grasso-mangia-hamburger-seduto-prima-di-un-televisore-gratuito-foto-removebg-preview.png');
+    height: 250px;
+    width: 350px;
+   background-size: cover;
+}
+
+.box-not-found {
+    background-color: #743c82;
+    padding: 2rem 2rem 0 2rem;
+    border-radius: 25px;
+    color: white;
+}
+
 .background-color {
     background-color: #ccefd3;
     position: fixed;
