@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <a class="btn btn-warning my-3" style="color: white" href="{{ route('admin.orders.index') }}"><i
+    {{-- <a class="btn btn-warning my-3" style="color: white" href="{{ route('admin.orders.index') }}"><i
             class="fa-solid fa-arrow-rotate-left"></i> Go Back</a>
-    <div class="container">
+    <div class="container"> --}}
        
             <h2 class="text-center py-3">Your Orders</h2>
             @if (count($orders) > 0)

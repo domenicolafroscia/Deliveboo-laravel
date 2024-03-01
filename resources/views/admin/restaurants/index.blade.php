@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    @include('partials.go_back')
+    {{-- @include('partials.go_back') --}}
     <div class="container">
 
         <div class="card-restaurant">

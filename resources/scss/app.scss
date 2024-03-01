@@ -104,16 +104,39 @@ h2 {
     a {
         text-decoration: none;
         color: #f0f8ffc7;
-        position: relative; 
+        position: relative;
         display: inline-block;
 
         &:hover {
-            color: #743c82; 
+            color: #743c82;
         }
         &:hover + h5 {
             display: block;
         }
 
     }
-    
+
+}
+
+// TABLE ORDERS-----------------------------------------------------------
+
+.table > :not(caption) > * > * {
+    background-color: #743c82;
+    color: white;
+}
+
+table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
 }
