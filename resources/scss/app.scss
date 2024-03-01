@@ -30,6 +30,28 @@ h2 {
     font-weight: 700;
 }
 
+// BUTTON--------------------------------------------------------------
+.btn-green {
+    font-weight: 700;
+    color: #743c82;
+    background-color: #add8b5;
+}
+
+.btn-green:hover {
+    border: 1px solid #add8b5;
+}
+
+.btn-violet {
+    background-color: #743c82;
+    color: white;
+    font-weight: 700;
+}
+
+.btn-violet:hover {
+    color: #743c82;
+    border: 1px solid #743c82;
+}
+
 // CARD RESTAURANT----------------------------------------------------
 
 .card-restaurant {

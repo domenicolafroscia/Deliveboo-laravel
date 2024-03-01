@@ -20,7 +20,7 @@
                                         action="{{ route('admin.trash.restore', ['id' => $meal->id]) }}" method="POST">
                                         @csrf
                                         @method('PUT')
-                                        <button class="btn btn-success" type="submit">Restore</button>
+                                        <button class="btn btn-green" type="submit">Restore</button>
                                     </form>
 
                                     <form class="d-inline-block"

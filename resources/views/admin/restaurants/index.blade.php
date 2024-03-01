@@ -13,7 +13,7 @@
                 <li>{{ $restaurant->email }}</li>
                 <li>{{ $restaurant->phone }}</li>
                 <li class="mb-3">{{ $restaurant->address }}</li>
-                <li><a class="btn btn-warning"
+                <li><a class="btn btn-green"
                         href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Modify data</a>
                 </li>
             </ul>
@@ -38,7 +38,7 @@
                                     {{-- <a class="btn btn-success" href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">
                                 <i class="fa-solid fa-info"></i>
                             </a> --}}
-                                    <a class="btn btn-warning"
+                                    <a class="btn btn-green"
                                         href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>

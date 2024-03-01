@@ -1,2 +1,2 @@
-<a class="btn btn-warning mt-2" style="color:white " href="{{url()->previous()}}"><i
+<a class="btn btn-violet mt-2" href="{{url()->previous()}}"><i
   class="fa-solid fa-arrow-rotate-left"></i> Go Back</a>

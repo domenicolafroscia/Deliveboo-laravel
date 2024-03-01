@@ -30,7 +30,7 @@
                         <input type="date" id="end-date" name="end_date">
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Apply</button>
+                <button class="btn btn-violet" type="submit">Apply</button>
             </form>
             
             <table class="table table-striped my-5">
@@ -57,7 +57,7 @@
                             </td>
 
                             <td>
-                                <a class="btn btn-warning" href="{{ route('admin.orders.show', $order) }}">Detail Order</a>
+                                <a class="btn btn-green" href="{{ route('admin.orders.show', $order) }}">Detail Order</a>
                             </td>
 
                         </tr>

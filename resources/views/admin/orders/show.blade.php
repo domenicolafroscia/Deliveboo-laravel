@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <a class="btn btn-warning my-3" style="color: white" href="{{ route('admin.orders.index') }}"> Go Back</a>
+@include('partials.go_back')
     <div class="container">
 
         <h2 class="text-center py-3">Info Order</h2>
