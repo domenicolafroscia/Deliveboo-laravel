@@ -43,7 +43,10 @@
                         <li class="list-group-item">Name: <strong>{{ $order->customer_name }}</strong></li>
                         <li class="list-group-item">Address: <strong>{{ $order->customer_address }}</strong></li>
                         <li class="list-group-item">Phone: <strong>{{ $order->customer_phone }}</strong></li>
+                        <li class="list-group-item">email: <strong>{{ $order->customer_email }}</strong></li>
+                        @if ($order->customer_note)
                         <li class="list-group-item">Note: {{ $order->customer_note }}</li>
+                        @endif
                     </ul>
                 </div>
 
