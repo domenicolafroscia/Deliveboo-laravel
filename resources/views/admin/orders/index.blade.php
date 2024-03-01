@@ -23,11 +23,11 @@
 
                     <div class="mb-3 col col-md-4 col-lg-3">
                         <label for="start-date" class="form-label">Start Date</label>
-                        <input class="form-control" type="date" id="start-date" name="start_date">
+                        <input type="date" id="start-date" name="start_date">
                     </div>
                     <div class="mb-3 col col-md-4 col-lg-3">
                         <label for="end-date" class="form-label">End Date</label>
-                        <input class="form-control" type="date" id="end-date" name="end_date">
+                        <input type="date" id="end-date" name="end_date">
                     </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Apply</button>

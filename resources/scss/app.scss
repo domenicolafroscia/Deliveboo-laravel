@@ -144,6 +144,7 @@ table tr:last-child td:first-child {
 // Input date Orders-------------------------------------------------------
 
 input[type="date"] {
+    width: 100%;
     padding: .5rem; 
     border: 1px solid #743c82; 
     background-color: #743c82;
@@ -151,6 +152,25 @@ input[type="date"] {
     color: white;
     outline: none; 
     font-size: 1rem; 
+    color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: #743c82;
+}
+
+.form-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #743c82;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field:focus,
+input[type="date"]::-webkit-datetime-edit-month-field:focus,
+input[type="date"]::-webkit-datetime-edit-year-field:focus {
+    background-color: #743c82;;
+    color: white;
+    outline: none;
 }
 
 .form-label {
