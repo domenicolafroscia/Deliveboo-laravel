@@ -140,3 +140,37 @@ table tr:last-child td:last-child {
 table tr:last-child td:first-child {
     border-bottom-left-radius: 10px;
 }
+
+// Input date Orders-------------------------------------------------------
+
+input[type="date"] {
+    padding: .5rem; 
+    border: 1px solid #743c82; 
+    background-color: #743c82;
+    border-radius: 5px; 
+    color: white;
+    outline: none; 
+    font-size: 1rem; 
+}
+
+.form-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #743c82;
+}
+
+.select-container {
+    position: relative;
+    display: inline-block;
+    color: white;
+}
+
+select {
+    width: 100%;
+    padding: .5rem;
+    font-size: 16px;
+    border: 1px solid #743c82;
+    border-radius: 5px;
+    background-color: #743c82;
+    cursor: pointer;
+}

@@ -14,7 +14,7 @@
 
                     <div class="col col-md-4 col-lg-2 mb-3">
                         <label for="filter-by-order" class="form-label">Filter by</label>
-                        <select name="select_order" id="filter-by-order" class="form-select" aria-label="Default select example">
+                        <select class="select-container" name="select_order" id="filter-by-order" class="form-select" aria-label="Default select example">
                             <option value="" selected>Choose one</option>
                             <option value="asc">Oldest order</option>
                             <option value="desc">Most recent order</option>
