@@ -34,7 +34,7 @@
                     <h5 class="text-center">Image not found</h5>
                 @endif
                 <div class="dish-details text-center">
-                    <h3 class="dish-title">{{ $meal->name }}</h3>
+                    <h3 class="dish-title">{{ $meal->name }} <span class="not-available">{{$meal->is_active ? '' : '- Not Available'}}</span></h3>
                     <p class="dish-description">{{ $meal->description }}</p>
                     <p class="dish-price">{{ $meal->price . '€' }}</p>
                     <div class="actions">
