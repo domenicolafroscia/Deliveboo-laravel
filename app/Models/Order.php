@@ -13,7 +13,7 @@ class Order extends Model
     protected $fillable = ['price_tot', 'customer_name', 'customer_address', 'customer_phone', 'status', 'customer_email'];
 
     public function meals() {
-        return $this->belongsToMany(Meal::class)->withPivot('quantity');
+        return $this->belongsToMany(Meal::class)->withPivot('quantity')->withTrashed();
     }
 
     public function getCreatedAtAttribute($value){
