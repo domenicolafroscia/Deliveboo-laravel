@@ -40,7 +40,7 @@
                             </a> --}}
                                     <a class="btn btn-green"
                                         href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">
-                                        <i class="fa-solid fa-pencil"></i>
+                                        <i class="fa-solid fa-pencil"></i> Edit
                                     </a>
                                     <form class="d-inline-block"
                                         action="{{ route('admin.meals.destroy', ['meal' => $meal->slug]) }}"
@@ -48,7 +48,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-delete" type="submit"
-                                            data-title="{{ $meal->name }}">Delete</button>
+                                            data-title="{{ $meal->name }}"><i class="fa-solid fa-trash"></i> Delete</button>
                                     </form>
                                 </div>
                             </div>
