@@ -55,7 +55,7 @@
                         <img id="preview-img" src="" alt="" style="max-height: 250px">
                     </div>
 
-                    <button id="submit" class="btn btn-success mt-4" type="submit">Save</button>
+                    <button id="submit" class="btn btn-violet my-3" type="submit">Save</button>
 
                 </form>
             </div>
