@@ -34,7 +34,7 @@ class RestaurantsTableSeeder extends Seeder
                 //dd($restaurant);
 
                 $restaurant->save();
-                $restaurant->categories()->attach($row[7]);
+                $restaurant->categories()->attach([$row[7], $row[8]]);
                 
            }
         } 
