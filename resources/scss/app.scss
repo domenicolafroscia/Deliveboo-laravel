@@ -113,6 +113,10 @@ h2 {
 
 .dish-details {
     padding: 20px;
+
+    .not-available {
+        filter: opacity(.7);
+    }
 }
 
 .dish-title {

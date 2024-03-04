@@ -43,9 +43,10 @@
                                 <h3 class="text-center py-3">Image not found</h3>
                             @endif
                             <div class="dish-details">
-                                <h3 class="dish-title">{{ $meal->name }}</h3>
+                                <h3 class="dish-title">{{ $meal->name }} <span class="not-available">{{$meal->is_active ? '' : '- Not Available'}}</span></h3>
                                 <p class="dish-description">{{ $meal->description }}</p>
                                 <p class="dish-price">{{ $meal->price . '€' }}</p>
+
                                 <div class="actions">
                                     {{-- <a class="btn btn-success" href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">
                                 <i class="fa-solid fa-info"></i>
