@@ -10,7 +10,11 @@
                 @foreach ($meals as $meal)
                     <div class="col-md-4">
                         <div class="dish-card">
-                            <img class="dish-image" src="{{ $meal->image }}" alt="Dish 1">
+                            @if ($meal->image)
+                            <img class="dish-image" src="{{ str_contains($meal->image, 'https') ? $meal->image : asset('storage/' . $meal->image) }}" alt="{{$meal->image ? $meal->name : ''}}">
+                            @else
+                                <h3 class="text-center py-3">Image not found</h3>
+                            @endif
                             <div class="dish-details">
                                 <h3 class="dish-title">{{ $meal->name }}</h3>
                                 <p class="dish-description">{{ $meal->description }}</p>
