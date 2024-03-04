@@ -66,7 +66,7 @@
             </table>
         @else
             <h2 class="alert alert-warning text-center mt-3">Your orders are empty!</h2>
-            <a class="btn btn-warning" href="{{route('admin.orders.index')}}">Delete Filter</a>
+            <a class="btn btn-violet" href="{{route('admin.orders.index')}}">Delete Filter</a>
         @endif
     </div>
 @endsection
