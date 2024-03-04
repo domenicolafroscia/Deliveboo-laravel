@@ -66,10 +66,12 @@
                 <div class="col-md-4">
                     <div class="dish-card">
                         <div class="new-dish">
-                            <a href="{{ route('admin.meals.create') }}">
+                            <a class="d-flex flex-column align-items-center py-5" href="{{ route('admin.meals.create') }}">
+                                <h5>Add new Meal</h5>
                                 <i class="fa-solid fa-plus"></i>
+                                
                             </a>
-                            <h5>Add new Meal</h5>
+                            
                         </div>
                     </div>
                 </div>

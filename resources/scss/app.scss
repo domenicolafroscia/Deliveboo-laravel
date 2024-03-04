@@ -130,15 +130,11 @@ h2 {
     height: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
     font-size: 100px;
     background-color: #f0f8ffa8;
 
-    h5 {
-        color: #743c82;
-        display: none;
-    }
+    
 
     a {
         text-decoration: none;
@@ -146,11 +142,16 @@ h2 {
         position: relative;
         display: inline-block;
 
+        h5 {
+            color: #743c82;
+            display: none;
+        }
+
         &:hover {
             color: #743c82;
         }
 
-        &:hover+h5 {
+        &:hover h5 {
             display: block;
         }
 
