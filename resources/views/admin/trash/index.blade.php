@@ -5,7 +5,7 @@
     <div class="container">
 
         @if (count($meals) > 0)
-            <h2 class="py-3 text-center">All the meal want to delete</h2>
+            <h2 class="py-3 text-center">All the meal you want to delete</h2>
             <div class="row">
                 @foreach ($meals as $meal)
                     <div class="col-md-4">
