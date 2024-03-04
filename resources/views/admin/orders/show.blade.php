@@ -2,7 +2,7 @@
 
 @section('content')
 @include('partials.go_back')
-    <div class="container">
+    <div class="container pb-3">
 
         <h2 class="text-center py-3">Info Order</h2>
         {{-- <div class="d-flex align-items-center flex-column">
@@ -32,7 +32,7 @@
                     </div>
                 </div> --}}
 
-        <div class="row row-cols-2">
+        <div class="row g-3 row-md-cols-2">
             <div class="col">
 
                 <div class="card card-order">
