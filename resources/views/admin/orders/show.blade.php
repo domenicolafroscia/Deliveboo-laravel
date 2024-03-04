@@ -35,11 +35,11 @@
         <div class="row row-cols-2">
             <div class="col">
 
-                <div class="card">
+                <div class="card card-order">
                     <div class="card-header">
                         <h5>Customer</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush card-order">
                         <li class="list-group-item">Name: <strong>{{ $order->customer_name }}</strong></li>
                         <li class="list-group-item">Address: <strong>{{ $order->customer_address }}</strong></li>
                         <li class="list-group-item">Phone: <strong>{{ $order->customer_phone }}</strong></li>
@@ -52,7 +52,7 @@
 
             </div>
             <div class="col">
-                <div class="card">
+                <div class="card card-order">
                     <div class="card-header">
                         <h5>Order</h5>
                     </div>

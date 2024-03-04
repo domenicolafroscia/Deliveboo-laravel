@@ -4,7 +4,7 @@
     background-image: url('../../public/img/1484776-sorridente-uomo-grasso-mangia-hamburger-seduto-prima-di-un-televisore-gratuito-foto-removebg-preview.png');
     height: 250px;
     width: 350px;
-   background-size: cover;
+    background-size: cover;
 }
 
 .box-not-found {
@@ -21,7 +21,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -111; /* Ensure the container is behind other content */
+    z-index: -111;
+    /* Ensure the container is behind other content */
 }
 
 h2 {
@@ -133,10 +134,12 @@ h2 {
     align-items: center;
     font-size: 100px;
     background-color: #f0f8ffa8;
+
     h5 {
         color: #743c82;
         display: none;
     }
+
     a {
         text-decoration: none;
         color: #f0f8ffc7;
@@ -146,7 +149,8 @@ h2 {
         &:hover {
             color: #743c82;
         }
-        &:hover + h5 {
+
+        &:hover+h5 {
             display: block;
         }
 
@@ -156,7 +160,7 @@ h2 {
 
 // TABLE ORDERS-----------------------------------------------------------
 
-.table > :not(caption) > * > * {
+.table> :not(caption)>*>* {
     background-color: #743c82;
     color: white;
 }
@@ -181,13 +185,13 @@ table tr:last-child td:first-child {
 
 input[type="date"] {
     width: 100%;
-    padding: .5rem; 
-    border: 1px solid #743c82; 
+    padding: .5rem;
+    border: 1px solid #743c82;
     background-color: #743c82;
-    border-radius: 5px; 
+    border-radius: 5px;
     color: white;
-    outline: none; 
-    font-size: 1rem; 
+    outline: none;
+    font-size: 1rem;
     color-scheme: dark;
 }
 
@@ -204,7 +208,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="date"]::-webkit-datetime-edit-day-field:focus,
 input[type="date"]::-webkit-datetime-edit-month-field:focus,
 input[type="date"]::-webkit-datetime-edit-year-field:focus {
-    background-color: #743c82;;
+    background-color: #743c82;
+    ;
     color: white;
     outline: none;
 }
@@ -229,4 +234,16 @@ select {
     border-radius: 5px;
     background-color: #743c82;
     cursor: pointer;
+}
+
+// CARD ORDER------------------------------------------------------
+
+.card-order {
+    background-color: #743c82;
+    color: white;
+
+    .order-details {
+        background-color: #add8b5;
+        color: #743c82;
+    }
 }

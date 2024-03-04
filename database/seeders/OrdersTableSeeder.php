@@ -35,9 +35,10 @@ class OrdersTableSeeder extends Seeder
             $order = new Order();
 
             $order->customer_name = $faker->firstName() . ' ' . $faker->lastName();
+            $order->customer_email = $faker->email();
             $order->customer_address = $faker->streetAddress();
             $order->customer_phone = $faker->phoneNumber();
-            $order->status = $faker->boolean();
+            $order->status = 1;
             $order->price_tot = $tot;
             $order->customer_note = $faker->realText($maxNbChars = 100, $indexSize = rand(1,2));
             $order->save();
