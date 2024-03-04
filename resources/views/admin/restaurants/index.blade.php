@@ -6,7 +6,11 @@
 
         <div class="card-restaurant">
             <h3 class="intro-restaurant">Welcome back!</h3>
-            <img class="restaurant-image" src="{{ str_contains($restaurant->image, 'https') ? $restaurant->image : asset('storage/' . $restaurant->image) }}"" alt="{{$restaurant->name}}">
+            @if ($restaurant->image) 
+            <img class="restaurant-image" src="{{ str_contains($restaurant->image, 'https') ? $restaurant->image : asset('storage/' . $restaurant->image) }}"" alt="{{$restaurant->image ? $restaurant->name : ''}}">
+            @else
+                <h3 class="text-center py-3">Image not found.</h3>
+            @endif
             <h2 class="restaurant-name">{{ $restaurant->name }}</h2>
             <strong>Your data</strong>
             <ul class="restaurant-info">
@@ -29,7 +33,11 @@
                 @foreach ($meals as $meal)
                     <div class="col-md-4">
                         <div class="dish-card">
-                            <img class="dish-image" src="{{ str_contains($meal->image, 'https') ? $meal->image : asset('storage/' . $meal->image) }}" alt="Dish 1">
+                            @if ($meal->image)
+                            <img class="dish-image" src="{{ str_contains($meal->image, 'https') ? $meal->image : asset('storage/' . $meal->image) }}" alt="{{$meal->image ? $meal->name : ''}}">
+                            @else
+                                <h3 class="text-center py-3">Image not found</h3>
+                            @endif
                             <div class="dish-details">
                                 <h3 class="dish-title">{{ $meal->name }}</h3>
                                 <p class="dish-description">{{ $meal->description }}</p>
