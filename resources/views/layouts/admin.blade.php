@@ -57,12 +57,12 @@
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse" style="background-color: #743C82">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
-                            </li>
+                            </li> --}}
                             @if (isset(Auth::user()->restaurant))
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
@@ -89,13 +89,13 @@
                                     <i class="fa-solid fa-pen-to-square fa-lg fa-fw"></i> Orders
                                 </a>
                             </li>
-                            @else
+                            {{-- @else
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.restaurants.create') }}">
                                     <i class="fa-solid fa-plus"></i> New Restaurant
                                 </a>
-                            </li>
+                            </li> --}}
                             @endif
                             
                         </ul>
