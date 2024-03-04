@@ -47,7 +47,7 @@
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-delete" type="submit"
+                                        <button class="btn btn-danger move-delete" type="submit"
                                             data-title="{{ $meal->name }}"><i class="fa-solid fa-trash"></i> Delete</button>
                                     </form>
                                 </div>
@@ -112,7 +112,7 @@
             </h2>
         @endif
 
-        @include('partials.delete_modal')
+        @include('partials.move_modal')
         {{-- <a class="btn btn-warning" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Modify
             Restaurant data</a> --}}
     </div>

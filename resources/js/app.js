@@ -51,3 +51,26 @@ buttons.forEach(button => {
         deleteModal.show();
     });
 })
+
+
+const allButtons = document.querySelectorAll('.move-delete');
+
+allButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const deleteModalElem = document.getElementById('move_modal');
+        const deleteModal = new bootstrap.Modal(deleteModalElem);
+
+        const title = button.getAttribute('data-title');
+        document.getElementById('title-to-move').innerHTML = title;
+
+        document
+            .getElementById('move-btn')
+            .addEventListener('click', () => {
+                button.parentElement.submit();
+            })
+
+        deleteModal.show();
+    });
+})
