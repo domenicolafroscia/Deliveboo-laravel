@@ -1,24 +1,56 @@
+<body style="font-family: Arial, sans-serif; background-color: #ccefd3; color: #743c82; display: flex; justify-content: center; align-items: center;">
+    <div style="max-width: 800px; padding: 20px 40px; background-color: #add8b5; border-radius: 15px;">
+        <svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 339.18 163.25" width="169.58" height="81.63">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #743c82;
+                }
+          
+                .cls-1, .cls-2 {
+                  stroke-width: 0px;
+                }
+          
+                .cls-2 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <path class="cls-2" d="M69.66,56.81c-1.24-2.31-2.87-3.95-4.9-4.9-2.03-.96-4.51-1.44-7.44-1.44h-9.3v62.14h9.3c2.93,0,5.41-.47,7.44-1.42s3.66-2.56,4.9-4.86c1.24-2.3,2.14-5.45,2.68-9.47.55-4.02.82-9.11.82-15.28s-.27-11.23-.82-15.26c-.55-4.03-1.45-7.2-2.68-9.51ZM63.61,93.21c-.2,3.3-.76,5.83-1.69,7.61-.93,1.78-2.52,2.66-4.78,2.66v-43.88c2.23,0,3.81.87,4.76,2.6.94,1.73,1.51,4.23,1.71,7.48.2,3.25.3,7.18.3,11.77s-.1,8.45-.3,11.75Z"/>
+            <polygon class="cls-2" points="79.47 112.61 100.35 112.61 100.35 103.23 88.6 103.23 88.6 85.73 97.05 85.73 97.05 76.6 88.6 76.6 88.6 59.86 100.35 59.86 100.35 50.47 79.47 50.47 79.47 112.61"/>
+            <polygon class="cls-2" points="116.24 50.47 107.11 50.47 107.11 112.61 128.33 112.61 128.33 104.16 116.24 104.16 116.24 50.47"/>
+            <rect class="cls-2" x="132.05" y="50.47" width="9.13" height="62.14"/>
+            <polygon class="cls-2" points="160.46 87.17 160.12 93.17 159.61 93.17 159.28 87.17 154.71 50.47 145.83 50.47 155.3 112.61 164.43 112.61 173.9 50.47 165.03 50.47 160.46 87.17"/>
+            <polygon class="cls-2" points="178.55 112.61 199.44 112.61 199.44 103.23 187.68 103.23 187.68 85.73 196.14 85.73 196.14 76.6 187.68 76.6 187.68 59.86 199.44 59.86 199.44 50.47 178.55 50.47 178.55 112.61"/>
+            <path class="cls-1" d="M225.22,79.81c2.23-1.41,3.73-3.23,4.5-5.45s1.16-4.83,1.16-7.82c0-3.75-.63-6.81-1.88-9.17-1.26-2.37-3.03-4.11-5.33-5.22-2.3-1.11-5.02-1.67-8.18-1.67h-9.3v62.14h10.82c3.16,0,5.81-.74,7.97-2.22,2.16-1.48,3.79-3.54,4.9-6.19,1.11-2.65,1.67-5.71,1.67-9.17s-.49-6.63-1.48-9.32c-.99-2.69-2.61-4.66-4.86-5.9ZM220.78,101.09c-.87,1.65-2.69,2.47-5.45,2.47v-19.11c2.76,0,4.58.81,5.45,2.43.87,1.62,1.31,4,1.31,7.12s-.44,5.43-1.31,7.08ZM220.64,73.98c-.97,1.41-2.74,2.11-5.31,2.11v-16.57c2.51,0,4.26.67,5.26,2.01,1,1.34,1.5,3.4,1.5,6.19s-.49,4.85-1.46,6.26Z"/>
+            <path class="cls-1" d="M255.26,98.3c1.82-1.18,3.21-2.79,4.19-4.82.97-2.03,1.46-4.31,1.46-6.85v-23.4c0-2.54-.49-4.82-1.46-6.85-.97-2.03-2.37-3.64-4.19-4.82-1.82-1.18-4-1.78-6.53-1.78s-4.71.59-6.53,1.78c-1.82,1.18-3.21,2.78-4.19,4.8-.97,2.02-1.46,4.3-1.46,6.87v23.4c0,2.54.49,4.82,1.46,6.85.97,2.03,2.37,3.64,4.19,4.82,1.82,1.18,4,1.78,6.53,1.78s4.71-.59,6.53-1.78ZM246.4,89.79c-.48-.94-.72-1.99-.72-3.15v-23.4c0-1.16.25-2.2.74-3.15.49-.94,1.26-1.42,2.3-1.42s1.84.47,2.32,1.42c.48.94.72,1.99.72,3.15v23.4c0,1.16-.23,2.2-.68,3.15-.45.94-1.24,1.42-2.37,1.42s-1.85-.47-2.32-1.42Z"/>
+            <path class="cls-1" d="M289.71,56.39c-.97-2.03-2.37-3.64-4.19-4.82-1.82-1.18-4-1.78-6.53-1.78s-4.71.59-6.53,1.78c-1.82,1.18-3.21,2.78-4.19,4.8-.97,2.02-1.46,4.3-1.46,6.87v23.4c0,2.54.49,4.82,1.46,6.85.97,2.03,2.37,3.64,4.19,4.82,1.82,1.18,4,1.78,6.53,1.78s4.71-.59,6.53-1.78c1.82-1.18,3.21-2.79,4.19-4.82.97-2.03,1.46-4.31,1.46-6.85v-23.4c0-2.54-.49-4.82-1.46-6.85ZM282.04,86.64c0,1.16-.23,2.2-.68,3.15-.45.94-1.24,1.42-2.37,1.42s-1.85-.47-2.32-1.42c-.48-.94-.72-1.99-.72-3.15v-23.4c0-1.16.25-2.2.74-3.15.49-.94,1.26-1.42,2.3-1.42s1.84.47,2.32,1.42c.48.94.72,1.99.72,3.15v23.4Z"/>
+            <path class="cls-1" d="M280.23,104.39c-1.95-1-4.34-.23-5.34,1.71-.03.06-3.06,5.77-10.6,5.77s-10.46-5.51-10.62-5.8c-1.01-1.92-3.38-2.68-5.32-1.68-1.95,1-2.71,3.39-1.71,5.34.21.41,5.33,10.07,17.65,10.07s17.44-9.66,17.65-10.07c1-1.95.24-4.34-1.71-5.34Z"/>
+          </svg>
 <h1>Dear {{ $order->customer_name }},</h1>
 
-<h5>We hope this email finds you well. We wanted to inform you that we have received your new order successfully. Thank
-    you for choosing {{ $restaurant->name }}!</h5>
+<h4>We hope this email finds you well. We wanted to inform you that we have received your new order successfully. Thank
+    you for choosing {{ $restaurant->name }}!</h4>
 
-<h5>Order Details:</h5>
+<h2>Order Details:</h2>
 @foreach ($order->meals as $meal)
-    <ul>
+    <ul style="list-style-type: none">
         <li>Meal: <strong>{{ $meal->name }}</strong></li>
         <li>Price: <strong>{{ $meal->price }} €</strong></li>
         <li>Quantity: <strong>{{ $meal->pivot->quantity }}</strong></li>
         <li>Ingredients: <strong>{{ $meal->description }}</strong></li>
     </ul>
 @endforeach
-<ul>
+<ul style="list-style-type: none">
     <li>Tot: <strong>{{ $order->price_tot }} €</strong></li>
 </ul>
 
 
-<h5>Please review the order details carefully. If you have any questions or need further assistance, feel free to reach out to our customer support team at {{$restaurant->email}}.</h5>
+<h4>Please review the order details carefully. If you have any questions or need further assistance, feel free to reach out to our customer support team at {{$restaurant->email}}.</h4>
 
-<h5>Best regards,</h5>
-<h4>{{$restaurant->name}}</h4>
-<h5>{{$restaurant->address}}</h5>
+<h4>Best regards,</h4>
+<h3>{{$restaurant->name}}</h3>
+<h4>{{$restaurant->address}}</h4>
+</div>
+</body>
+
