@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="mb-3 has-validation">
-                        <label for="price" class="form-label">Price</label>
+                        <label for="price" class="form-label">Price &euro;</label>
                         <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror"
                             id="price" name="price" value="{{ old('price') }}" required min="0.01" max="999.99">
 
