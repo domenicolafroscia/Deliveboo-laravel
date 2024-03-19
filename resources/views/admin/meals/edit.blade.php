@@ -24,7 +24,7 @@
             </div>
 
             <div class="mb-3 has-validation">
-                <label for="price" class="form-label">Price</label>
+                <label for="price" class="form-label">Price &euro;</label>
                 <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price"
                     name="price" value="{{ old('price', $meal->price) }}" required min="0.01" max="999.99">
                 @error('price')
@@ -57,7 +57,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="is_active">Available</label>
+                <label class="form-label" for="is_active">Available</label>
                 <select class="form-select" name="is_active" class="@error('is_active') is-invalid @enderror"
                     id="is_active">
                     <option value="1" @selected(!old('is_active', $meal->is_active))>Meal is Available</option>
@@ -68,7 +68,7 @@
                 @enderror
             </div>
 
-            <button class="btn btn-violet mt-4" type="submit" >Save</button>
+            <button class="btn btn-violet my-4" type="submit" >Save</button>
 
         </form>
     </div>

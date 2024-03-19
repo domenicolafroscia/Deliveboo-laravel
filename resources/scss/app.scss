@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
+// NOR FOUND---------------------------------------------------------
+
 .not-found {
     background-image: url('../../public/img/1484776-sorridente-uomo-grasso-mangia-hamburger-seduto-prima-di-un-televisore-gratuito-foto-removebg-preview.png');
     height: 250px;
@@ -14,6 +16,8 @@
     color: white;
 }
 
+// APP----------------------------------------------
+
 .background-color {
     background-color: #ccefd3;
     position: fixed;
@@ -25,11 +29,43 @@
     /* Ensure the container is behind other content */
 }
 
+// COMMON----------------------------------
+._link {
+    color: #743c82;
+    font-size: 1.5rem;
+    &:hover {
+        color: #add8b5;
+    }
+}
+
 h2 {
     color: #743c82;
     font-size: 3rem;
     font-weight: 700;
 }
+
+h4 {
+    color: #743c82;
+    font-weight: 700;
+}
+
+input.form-control, textarea.form-control, select.form-select {
+    background-color: #743c82;
+    color: white;
+    font-weight: 500;
+    &:focus {
+        background-color: #743c82;
+    color: white;
+    }
+    
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #743c82; 
+    border: none;
+    color: white;  
+}
+
 
 // BUTTON--------------------------------------------------------------
 .btn-green {
@@ -206,7 +242,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: #743c82;
 }
 
-.form-label {
+.form-label, .col-form-label {
     font-size: 1.5rem;
     font-weight: 700;
     color: #743c82;
@@ -219,12 +255,6 @@ input[type="date"]::-webkit-datetime-edit-year-field:focus {
     ;
     color: white;
     outline: none;
-}
-
-.form-label {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #743c82;
 }
 
 .select-container {
@@ -254,3 +284,29 @@ select {
         color: #743c82;
     }
 }
+
+// INPUT CHECKBOX----------------------------------------------------
+
+input[type="checkbox"]+label {
+    color: #743c82;
+    border: 1px solid #743c82;
+  
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-style: italic;
+    width: 120px;
+    text-align: center;
+  }
+  
+  
+  input[type="checkbox"]:checked+label {
+    color: white;
+    background: #743c82;
+    transition: 0.3s
+  }
+
+  .hidden {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }

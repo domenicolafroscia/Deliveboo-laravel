@@ -63,17 +63,21 @@
             <img id="preview-img" src="" alt="" style="max-height: 250px">
         </div>
 
-        <div class="mb-3">
-            <p>Choose your Category:</p>
-            @foreach ($categories as $category)
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="{{ $category->id }}" id="{{ $category->name }}"
-                        name="categories[]" @checked(in_array($category->id, old('categories', [])))>
-                    <label class="form-check-label" for="{{ $category->name }}">
-                        {{ $category->name }}
-                    </label>
+        <div class="mb-3 container-md">
+            <h4 class="text-center pb-3">Choose your Category</h4>
+            <div class="row ">
+                @foreach ($categories as $category)
+                <div class="col-6 col-sm-4 col-md-3 d-flex justify-content-center">
+                    <div class="form-check p-0">
+                        <input class="form-check-input hidden" type="checkbox" value="{{ $category->id }}"
+                            id="{{ $category->name }}" name="categories[]" @checked($errors->any() ? in_array($category->id, old('categories', [])) : $restaurant->categories->contains($category))>
+                        <label class="form-check-label" for="{{ $category->name }}">
+                            {{ $category->name }}
+                        </label>
+                    </div>
                 </div>
-            @endforeach
+                @endforeach
+            </div>
             @error('categories')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
