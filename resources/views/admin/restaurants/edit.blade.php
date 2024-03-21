@@ -5,7 +5,7 @@
 
     <h2 class="text-center py-3">Modify your Restautant details</h2>
 
-    <form class="mb-3" action="{{ route('admin.restaurants.update', ['restaurant' => $restaurant->slug]) }}" method="POST"
+    <form class="mb-3 w-75 m-auto" action="{{ route('admin.restaurants.update', ['restaurant' => $restaurant->slug]) }}" method="POST"
         enctype="multipart/form-data">
         @csrf
         @method('PUT')

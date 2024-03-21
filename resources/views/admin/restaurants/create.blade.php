@@ -3,7 +3,7 @@
 @section('content')
     <h2 class="text-center py-3">Insert your Restautant details</h2>
 
-    <form class="mb-3" action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
+    <form class="mb-3 w-75 m-auto" action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3 has-validation">
