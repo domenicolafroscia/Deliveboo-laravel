@@ -70,7 +70,7 @@
                 <div class="col-6 col-sm-4 col-md-3 d-flex justify-content-center">
                     <div class="form-check p-0">
                         <input class="form-check-input hidden" type="checkbox" value="{{ $category->id }}"
-                            id="{{ $category->name }}" name="categories[]" @checked($errors->any() ? in_array($category->id, old('categories', [])) : $restaurant->categories->contains($category))>
+                            id="{{ $category->name }}" name="categories[]" @checked($errors->any() ?? in_array($category->id, old('categories', [])))>
                         <label class="form-check-label" for="{{ $category->name }}">
                             {{ $category->name }}
                         </label>
@@ -82,6 +82,6 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        <button class="btn btn-success" type="submit">Create</button>
+        <button class="btn btn-violet" type="submit">Create</button>
     </form>
 @endsection
